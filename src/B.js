@@ -1,35 +1,44 @@
-function solve(inputB) {
-    const input=+inputB
-    let numTeam = []
-    let numGame = 0
-    let countG = 0
-    for (let countT = 3; countG <= input; countT += 2) {
-        let numT=countT
-        countG = countG + 2 * countT - 3
-        numGame = countG
-        while (numGame <= input) {
-            if (numGame === input) {
-                numTeam.push(numT)
-                numGame++
-            } else {
-                numGame=numGame+numT
-                numT=numT*2
+function solve(input) {
+    const numberOfFights = +input
+    const half = numberOfFights/2+1
+    let arrNumberOfTeams = []
+    let numberOfGames = 0
+    let gamesSRound = 0
+
+    for (let teamsSRound = 3; gamesSRound <= numberOfFights; teamsSRound += 2) {
+        let numberOfTeams = teamsSRound
+        gamesSRound = gamesSRound + 2 * teamsSRound - 3
+        numberOfGames = gamesSRound
+        if (teamsSRound <= half) {
+            while (numberOfGames <= numberOfFights) {
+                if (numberOfGames === numberOfFights) {
+                    arrNumberOfTeams.push(numberOfTeams)
+                    numberOfGames++
+                } else {
+                    numberOfGames += numberOfTeams
+                    numberOfTeams *= 2
+                }
             }
+        } else if (gamesSRound === numberOfFights) {
+            arrNumberOfTeams.push(teamsSRound)
         }
     }
-    for(let countT=2; countT-1<=input; countT*=2){
-        if(countT-1=== input ){
-            numTeam.push(countT)
+    for (let counterT = 2; counterT - 1 <= numberOfFights; counterT *= 2) {
+        if (counterT - 1 === numberOfFights) {
+            arrNumberOfTeams.push(counterT)
         }
     }
-    numTeam.sort(function (a, b) {
-        return +a - +b;
-    })
-    if (numTeam.length<1){
-        numTeam.push(-1)
+
+    if (arrNumberOfTeams.length === 0) {
+        arrNumberOfTeams.push(-1)
+    } else {
+        arrNumberOfTeams.sort(function (a, b) {
+            return +a - +b;
+        })
     }
-    return numTeam.join(`\n`)
+    return arrNumberOfTeams.join(`\n`)
 }
+
 const fs = require('fs')
 const input = fs.readFileSync(0, 'utf-8')
 console.log(solve(input))

@@ -30,10 +30,13 @@ describe('Templater', () => {
         expect(Templater().span(152).toString()).toBe('<span>152</span>')
         expect(Templater().span(`152`).toString()).toBe('<span>152</span>')
 
-        expect(Templater().br(undefined).toString()).toBe('<br>')
         expect(Templater().br().toString()).toBe('<br>')
+        expect(Templater().br({id:45}).toString()).toBe('<br id="45">')
 
         expect(() => {Templater().br('some content')}).toThrow(errorMessage)
+        expect(() => {Templater().br(`11`,{id:45})}).toThrow(errorMessage)
+        expect(() => {Templater().br({id:45},`11`)}).toThrow(errorMessage)
+        expect(() => {Templater().br(undefined)}).toThrow(errorMessage)
         expect(() => {Templater().br(nan)}).toThrow(errorMessage)
         expect(() => {Templater().br(NaN)}).toThrow(errorMessage)
         expect(() => {Templater().br(Null)}).toThrow(errorMessage)
