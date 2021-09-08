@@ -81,16 +81,16 @@ function solveB(inputB: string) {
     return numTeam.join(`\n`)
 }
 
-function App() {
+/*function App() {
 
-    /*solveA(inputA)*/
-    /* for(let i=1; i<=200; i++){
+    /!*solveA(inputA)*!/
+    /!* for(let i=1; i<=200; i++){
         console.log(`${i}:${solveB(i)}`)
-     }*/
-    /*for (let i = 1; i <= 200; i++) {
+     }*!/
+    /!*for (let i = 1; i <= 200; i++) {
         console.log(solveB(`` + i))
-    }*/
-    /*const array = [
+    }*!/
+    /!*const array = [
         {id: 123,name: `wwww`},
         {id: 123,name: `wwww`},
         {id: 123,name: `wwww`},
@@ -99,7 +99,7 @@ function App() {
     array.map((object)=>{
         console.log(`object: ${object}`) // object: [object Object]
         console.log(`object: ${JSON.stringify(object)}`) //object: {"id":123,"name":"wwww"}
-    })*/
+    })*!/
 
     return (
         <div>
@@ -109,9 +109,9 @@ function App() {
             </div>
         </div>
     );
-}
+}*/
 
-/*type RateType = {
+type RateType = {
     id: string | null,
     cast: string | null,
     parent_id: string | null,
@@ -132,7 +132,13 @@ function App() {
             <td style={{border:"solid", borderColor:"blue", padding:10}}>{r.title || `not value`}</td>
         </tr>
     )
-    useEffect(() => {
+    debugger
+   useEffect(  () => {
+       /*async function axiosApi() {
+           const data = await  axios.get<RatesType>("http://api.vozim.by/?r=aping/ratesJson").then(({data}) => data)
+           setRates(data)
+       }
+       axiosApi()*/
         axios.get<RatesType>("http://api.vozim.by/?r=aping/ratesJson").then(({data}) => {
             setRates(data)
         })
@@ -141,6 +147,6 @@ function App() {
             <table style={{width:800, }}><tbody>{readRates}</tbody></table>
         </div>
     );
-}*/
+}
 
 export default App;
