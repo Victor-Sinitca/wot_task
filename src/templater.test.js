@@ -35,3 +35,22 @@ test('tags has attributes', () => {
         Templater().div('Yeah!', {id: "header", class: "awesome"}).toString()
     ).toBe('<div class="awesome" id="header">Yeah!</div>')
 })
+
+
+
+
+const array = [
+    {id: 123,name: `wwww`},
+    {id: 123,name: `wwww`},
+    {id: 123,name: `wwww`},
+    {id: 123,name: `wwww`}
+]
+
+const axios = require('axios');
+test('read array', async () => {
+
+    const date = axios.get("http://api.vozim.by/?r=aping/ratesJson").then(({data})=>data)
+
+    expect(Templater().div('Yeah!', {id: "header", class: "awesome"}).toString()
+    ).toBe('<div class="awesome" id="header">Yeah!</div>')
+})

@@ -174,7 +174,19 @@ describe('Templater', () => {
         ).p(`p`)
         expect(template.toString()).toBe('<div><p>Hello</p><p>World</p><div>div</div><br><br></div><p>p</p>')
     })
+    it('22', () => {
+        const template = Templater()
+        template.div(`div`, {id:345, class:`12345`})
+        template.p(Templater().div(Templater().p(`p`), Templater().span(`span`), Templater().span()), Templater().br(),`div`)
+        expect(template.toString()).toBe('<div class="12345" id="345">div</div><p><div><p>p</p><span>span</span><span></span></div><br>div</p>')
+    })
     it('3', () => {
         expect(Templater().toString()).toBe('')
+    })
+    it('4', () => {
+        const template = Templater().div(`div`)
+        expect(template.toString()).toBe('<div>div</div>')
+        template.span(template.p(`p`))
+        expect(template.toString()).toBe('<div>div</div><p>p</p><span><div>div</div><p>p</p></span>')
     })
 })
