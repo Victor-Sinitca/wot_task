@@ -121,7 +121,7 @@ type RateType = {
 }
 type RatesType = Array<RateType>
 function App() {
-    const dddd=``
+    const dddd=`1111`
     const [rates, setRates] = useState<RatesType | null>(null)
     const readRates = rates?.map((r) =>
         <tr key={r.id} >
