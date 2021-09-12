@@ -80,6 +80,7 @@ function solveB(inputB: string) {
 
 function App() {
     solveA(inputA)
+    ////252255
    /* for(let i=1; i<=200; i++){
        console.log(`${i}:${solveB(i)}`)
     }*/
