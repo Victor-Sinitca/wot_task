@@ -88,6 +88,11 @@ function App() {
         console.log(solveB(``+i))
     }
 
+
+
+
+
+
     return (
         <div>
             <div style={{backgroundColor: "red", height: 200, width: `100%`}}>
