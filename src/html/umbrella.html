@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>umbrella</title>
+    <style>
+        .umbrella{
+            height: 100px;
+            width: 200px;
+            background-color: #61dafb;
+            border-radius: 50% 50% 0 0 /  100%  100% 0 0 ;
+            margin: 0 auto ;
+        }
+        .umbrella::after{
+            margin-top: 0;
+            z-index: 1;
+            content: "";
+            position: absolute;
+            top:200px;
+            left:50%;
+            margin-left:-65px;
+            height: 25px;
+            width: 50px;
+            border-radius:0 0 50% 50% / 0 0  100%  100% ;
+            border-right: #1a1b1c solid 10px;
+            border-bottom: #0b0c0c solid 10px;
+            border-left: #393b3b solid 10px;
+        }
+        .umbrella::before{
+            content: "";
+            width: 2px;
+            margin-top: -5px;
+            position: absolute;
+            left:50%;
+            margin-left:-5px;
+            height: 190px;
+            background-color: #010c4e;
+            border: #1845ba solid 4px;
+            border-radius: 50% 50% 0 0/100%  100% 0 0   ;
+        }
+    </style>
+</head>
+<body>
+<div class="umbrella"></div>
+</body>
+</html>
+
