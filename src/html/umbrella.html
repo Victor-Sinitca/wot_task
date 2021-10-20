@@ -5,41 +5,57 @@
     <title>umbrella</title>
     <style>
         .umbrella{
-            position: relative;
-            height: 100px;
-            width: 200px;
-            background-color: #057595;
-            border-radius: 50% 50% 0 0 /  100%  100% 0 0 ;
-            margin: 0 auto ;
-            z-index: 3;
+            width: 8px;
+            height: 190px;
+            margin: 0 auto;
+            background:linear-gradient(#61dafb, #1845ba);
+            border: #1845ba solid 1px;
+            border-radius: 50% 50% 0 0/100%  100% 0 0 ;
         }
         .umbrella::after{
-            margin-top: 0;
-            z-index: 1;
             content: "";
             position: absolute;
-            top:190px;
-            left:50%;
-            margin-left:-65px;
-            height: 25px;
-            width: 50px;
-            border-radius:0 0 50% 50% / 0 0  100%  100% ;
-            border-right: #1a1b1c solid 10px;
-            border-bottom: #0b0c0c solid 10px;
-            border-left: #393b3b solid 10px;
+            height: 100px;
+            margin-top: 2px;
+            margin-left:-95.5px;
+            width: 200px;
+           /* box-shadow:
+                    #072932 0px 5px 5px 1px
+                    ,#61dafb inset 5px 5px 5px 1px
+                    ,#0e3c49 inset 10px 10px 10px 1px
+                    ,#0dc6fa inset 20px 20px 20px 1px
+                    ,#064d61 inset 30px 30px 30px 1px
+                    ,#0dc6fa inset 40px 40px 40px 1px
+        ;*/
+            background:linear-gradient(blue, #010c4e);
+            border-radius: 50% 50% 0 0 /  100%  100% 0 0 ;
+            animation: loaderX 4s infinite ease-in-out;
         }
         .umbrella::before{
             content: "";
-            width: 2px;
-            margin-top: -5px;
             position: absolute;
-            left:50%;
-            margin-left:-5px;
-            height: 190px;
-            background-color: #010c4e;
-            border: #1845ba solid 4px;
-            border-radius: 50% 50% 0 0/100%  100% 0 0   ;
-            z-index: 5;
+            height: 25px;
+            width:50px;
+            top:200px;
+            margin-left:-61px;
+            border-radius:0 0 50% 50% / 0 0  100%  100% ;
+            border-right: #193040 solid 10px;
+            border-bottom: #193040 solid 10px;
+            border-left: #193040 solid 10px;
+        }
+        @keyframes loaderX {
+            0% {
+                transform:scaleX(1) scaleY(1);
+                transform-origin: 50% 0;
+            }
+            50%{
+                transform:scaleX(0.08) scaleY(1.9);
+                transform-origin: 50% 0;
+            }
+            100%{
+                transform:scaleX(1) scaleY(1);
+                transform-origin: 50% 0;
+            }
         }
     </style>
 </head>
