@@ -1,5 +1,6 @@
 import {} from './';
 
+// для примера структуры объекта
 const man = {
     height: 180,
     weight: 70,
@@ -11,38 +12,57 @@ const man = {
 }
 type ManType = typeof man
 type  ArrayMenType = Array<Array<ManType>>
+//для примера структура изменяемого массива
 const arrayMen = [
-    [{...man}, {...man}, {...man}, {...man}, {...man}],
-    [{...man}, {...man}, {...man}, {...man}, {...man}],
-    [{...man}, {...man}, {...man}, {...man}, {...man}],
-    [{...man}, {...man}, {...man}, {...man}, {...man}],
-    [{...man}, {...man}, {...man}, {...man}, {...man}],
+    [returnNewMen(man,190, 20), returnNewMen(man), returnNewMen(man), returnNewMen(man), returnNewMen(man)],
+    [returnNewMen(man), returnNewMen(man, undefined,20), returnNewMen(man), returnNewMen(man), returnNewMen(man)],
+    [returnNewMen(man), returnNewMen(man), returnNewMen(man), returnNewMen(man), returnNewMen(man)],
+    [returnNewMen(man), returnNewMen(man, 175), returnNewMen(man), returnNewMen(man), returnNewMen(man)],
+    [returnNewMen(man), returnNewMen(man), returnNewMen(man), returnNewMen(man), returnNewMen(man)],
 ] as ArrayMenType
+
 //получить нового измененного человека прямой деструктуризацией
-const returnNewMen = (men: ManType) => {
-    return {...men, height: 160, purchases: {...men.purchases, apple: 11}}
+function returnNewMen  (men:ManType, height?:number, apple?:number ):ManType{
+    return {...men, height: height? height : men.height,
+        purchases: {...men.purchases, apple: apple? apple : men.purchases.apple}}
+}
+
+type AddNewManType={
+    position:{
+        x:number,
+        y:number
+    },
+    data:ManType
 }
 // получить новый измененный массив людей
-const returnNewArray = (array: ArrayMenType) => {
+function returnNewArray  (array: ArrayMenType, {data:man, position:{x,y} }:AddNewManType ):ArrayMenType {
     const [...newArray] = array
-    newArray[0] = [...array[0]]
-    newArray[0][1] = {...array[0][1], height: 160, purchases: {...array[0][1].purchases, apple: 11}}
+    newArray[y] = [...array[y]]
+    newArray[y][x] = {...array[y][x], ...man,}
     return newArray
 }
 // получить новый измененный массив людей прямой деструктуризацией, как с объектом
-const returnNewArrayExample = (array: Array<Array<typeof man>>) => {
+function returnNewArrayExample  (array: ArrayMenType ,{data:man, position:{x,y} }:AddNewManType ):ArrayMenType  {
     return [
         ...array,
-        //как-то обратиться к элементу деструкторизованного массива, для изменения его состояния
-        // например
+        //как-то обратиться к элементу деструктуризованого массива, для изменения его состояния
+        // например:
         /*
-        [0]:[...array[0],
-              [1]:{...array[0][1], height: 160, purchases: {...array[0][1].purchases, apple: 11}}
+        [y]:[...array[y],
+              [x]:{...array[y][x], ...man}
         ]
         */
     ]
 }
+const changedManData={
+    position:{ y:2, x:3},
+    data:returnNewMen(man, 168, )
+} as AddNewManType
+const newChangeArray=returnNewArray(arrayMen,changedManData)
+
 // с объектами изменение свойств внутри деструктуризации работает, а вот с
-// массивами не получилось
+// массивами такой реализации не обнаружил.
+// понимаю, что это не такой и частый случай, поэтому хотелось бы услышать компетентное мнение о необходимости такой реализации.
+
 
 
