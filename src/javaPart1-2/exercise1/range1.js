@@ -22,10 +22,13 @@ module.exports = function range(from, to, step) {
     } else if (from < to) {
         if(!step ) step =1
         if(step < 0) return []
-        //10000000000    false
-        //1000000000     true
-        if(Math.abs(to-from)/Math.abs(step) >3999999999) return [];
+        //4294967296 false
+        //4294967295 true
+        if(Math.abs(to-from)/Math.abs(step) >4294967295) return 0;
         for (let i = from; i < to; i += step) {
+            if (returnArray.length>3294967293){
+                break
+            }
             returnArray.push(i)
         }
     }
