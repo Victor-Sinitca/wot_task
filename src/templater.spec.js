@@ -1,4 +1,5 @@
-const Templater = require('./templater')
+/*const Templater = require('./templater')*/
+const Templater = require('./temp')
 const errorMessage = `Nested content is not allowed`
 describe('Templater', () => {
     it('create instance', () => {
