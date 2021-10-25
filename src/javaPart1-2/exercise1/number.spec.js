@@ -1,5 +1,5 @@
 /* global BigInt */
-const range = require('./range1')
+const range = require('./rangeReady')
 
 describe("func1", ()=>{
     it('1', () => {

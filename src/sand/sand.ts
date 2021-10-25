@@ -1,4 +1,4 @@
-import {} from './';
+import {} from '../index';
 
 let object={
     man:"ccc",

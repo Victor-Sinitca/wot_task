@@ -3,7 +3,7 @@ import {
     postOrderTraversalRec, levelOrderTraversalNoRec,
     preorderTraversalRec,
     preorderTraversalNoRec, postOrderTraversalNoRec, allOrderTraversalsRec, Queue, levelOrderTraversalRec1
-} from "./treeTraversal";
+} from "../algoritmTask/treeTraversal";
 const {TextEncoder, TextDecoder} = require('util');
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;

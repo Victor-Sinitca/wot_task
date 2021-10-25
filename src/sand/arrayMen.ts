@@ -1,4 +1,4 @@
-import {} from './';
+import {} from '../index';
 
 // для примера структуры объекта
 const man = {
