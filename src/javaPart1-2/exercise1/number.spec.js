@@ -1,5 +1,8 @@
 /* global BigInt */
 const range = require('./rangeReady')
+const range2 = require('./range2')
+
+
 
 describe("func1", ()=>{
     it('1', () => {
@@ -7,34 +10,22 @@ describe("func1", ()=>{
         expect(range(10)).toEqual(exp)
     })
     it('2', () => {
-        const exp=[]
-        /*const exp=[0,-1,-2,-3,-4,-5,-6,-7,-8,-9]*/
-        /*const exp=[0,1,2,3,4,5,6,7,8,9]*/
-
+        const exp=[0,-1,-2,-3,-4,-5,-6,-7,-8,-9]
         expect(range(-10)).toEqual(exp)
     })
     it('3', () => {
-        /*const exp=[0,-1,-2,-3,-4,-5,-6,-7,-8,-9]*/
-        /*const exp=[]*/
         const exp=[]
         expect(range(0)).toEqual(exp)
     })
     it('4', () => {
-        /*const exp=[0,-1,-2,-3,-4,-5,-6,-7,-8,-9]*/
         const exp=[0]
-
         expect(range(1)).toEqual(exp)
     })
     it('5', () => {
-        /*const exp=[0,-1,-2,-3,-4,-5,-6,-7,-8,-9]*/
         const exp=[]
         expect(range()).toEqual(exp)
     })
-    it('6', () => {
-        /*const exp=[0,-1,-2,-3,-4,-5,-6,-7,-8,-9]*/
-        const exp=[]
-        expect(range(Infinity)).toEqual(exp)
-    })
+
     })
 
 
@@ -76,52 +67,60 @@ describe("func3", ()=> {
         expect(range(1,5,1)).toEqual(exp)
     })
     it('2', () => {
-        const exp=[5,4,3,2]
+        const exp=[]
         expect(range(5,1,1)).toEqual(exp)
+    })
+    it('2-1', () => {
+        const exp=[5,4,3,2]
+        expect(range(5,1,-1)).toEqual(exp)
     })
     it('3', () => {
         const exp=[-5,-3,-1,1]
         expect(range(-5,2,2)).toEqual(exp)
     })
     it('3-1', () => {
-        const exp=[5,3,1,-1]
+        const exp=[]
         expect(range(5,-2,2)).toEqual(exp)
+    })
+    it('3-2', () => {
+        const exp=[5,3,1,-1]
+        expect(range(5,-2,-2)).toEqual(exp)
     })
     it('4', () => {
         const exp=[-5,-4,-3,-2,-1]
         expect(range(-5,0,1)).toEqual(exp)
     })
-    it('5', () => {
+   /* it('5', () => {
         const exp=[-1,-0.7,-0.4,-0.1,0.2,0.5,0.8]
-        expect(range(-1,1,0.3)).toEqual(exp)
+        expect(range2(-1,1,0.3)).toEqual(exp)
     })
     it('6', () => {
         const exp=[1,0.7,0.4,0.1,-0.2,-0.5,-0.8]
-        expect(range(1,-1,0.3)).toEqual(exp)
-    })
+        expect(range2(1,-1,-0.3)).toEqual(exp)
+    })*/
     it('7', () => {
         const exp=[]
         expect(range(1,1,0.3)).toEqual(exp)
     })
-    it('8', () => {
+    /*it('8', () => {
         const exp=[-10,-9.7,-9.4,-9.1,-8.8,-8.5,-8.2]
-        expect(range(-10,-8,0.3)).toEqual(exp)
-    })
+        expect(range2(-10,-8,0.3)).toEqual(exp)
+    })*/
     it('9', () => {
         const exp=[-10,]
         expect(range(-10,-8,20)).toEqual(exp)
     })
-    it('10', () => {
+   /* it('10', () => {
         const exp=[BigInt(10),BigInt(8),BigInt(6),BigInt(4),
             BigInt(2),BigInt(0),BigInt(-2),BigInt(-4),BigInt(-6)]
         const big=BigInt(10)
         expect(range(big,-8,2)).toEqual(exp)
-    })
-    it('10-1', () => {
+    })*/
+   /* it('10-1', () => {
         const exp=[]
         const big=BigInt(10)
         expect(range(big,-8,0.5)).toEqual(exp)
-    })
+    })*/
     it('11', () => {
         const exp=[0,1,2,3,4]
         expect(range(5,undefined,undefined)).toEqual(exp)
@@ -134,10 +133,14 @@ describe("func3", ()=> {
         const exp=[5]
         expect(range(5,7,Infinity)).toEqual(exp)
     })
-    /*it('13', () => {
-        const exp=[0,-1,-2,-3,-4]
+    it('12-4', () => {
+        const exp=[]
+        expect(range(5,Infinity,null)).toEqual(exp)
+    })
+    it('13', () => {
+        const exp=[]
         expect(range(-5,undefined,null)).toEqual(exp)
-    })*/
+    })
     it('14', () => {
         const exp=[20,25,30,35,40,45]
         expect(range(20,50,5)).toEqual(exp)
@@ -157,13 +160,22 @@ describe("func3", ()=> {
         expect(range(5,Infinity,Infinity)).toEqual(exp)
     })
     it('17-1', () => {
-        const exp=[5]
+        const exp=[]
         expect(range(5,-Infinity,Infinity)).toEqual(exp)
     })
     it('18', () => {
-        const exp=[Infinity]
+        const exp=[]
         expect(range(Infinity,10,Infinity)).toEqual(exp)
     })
+    it('21', () => {
+        const exp=[]
+        expect(range(Infinity,-Infinity,Infinity)).toEqual(exp)
+    })
+    it('20-1', () => {
+        const exp=[]
+        expect(range(-Infinity,Infinity,-Infinity)).toEqual(exp)
+    })
+
     it('19', () => {
         const exp=[]
         expect(range(Infinity,Infinity,Infinity)).toEqual(exp)
@@ -172,10 +184,23 @@ describe("func3", ()=> {
         const exp=[-Infinity]
         expect(range(-Infinity,Infinity,Infinity)).toEqual(exp)
     })
-    it('21', () => {
+
+    it('21-33', () => {
         const exp=[Infinity]
-        expect(range(Infinity,-Infinity,Infinity)).toEqual(exp)
+        expect(range(Infinity,-Infinity,-Infinity)).toEqual(exp)
     })
+    it('21-1', () => {
+        const exp=[]
+        expect(range(Infinity,Infinity)).toEqual(exp)
+    })
+    it('21-2', () => {
+        const exp=[]
+        expect(range(-Infinity,-Infinity)).toEqual(exp)
+    })
+/*    it('21-3', () => {
+        const exp=[]
+        expect(range(-Infinity)).toEqual(exp)
+    })*/
     it('22', () => {
         const exp=[]
         expect(range(undefined,undefined,undefined)).toEqual(exp)
