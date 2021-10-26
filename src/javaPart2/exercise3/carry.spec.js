@@ -1,26 +1,23 @@
-const carry = require('./curry')
+const carry = require('./carry')
 
 
-const add = (x, y) => x + y
-const eq = (x) => x
-const volume = (x, y, z) => x * y * z
+const pointer = (x, y,z) =>[x,y,z]
+const carried=carry(pointer)
+
 const errorMessage = "Упс"
 
 describe("add", () => {
     it("1", () => {
-        const result = 5
-        const add2 = partial(add, 2)
-        expect(add2(3)).toEqual(result)
+        const result = [1,2,3]
+        expect(carried(1)(2)(3)).toEqual(result)
     })
-    it("vol_10", () => {
-        const result = 200
-        const vol_10 = partial(volume, 10)
-        expect(vol_10(5, 4)).toEqual(result)
+    it("2", () => {
+        const result = [1,2,3]
+        expect(carried(1,2)(3)).toEqual(result)
     })
-    it("vol_10_base", () => {
-        const result = 1000
-        const vol_10_base = partial(volume, 10, 10)
-        expect(vol_10_base(10)).toEqual(result)
+    it("3", () => {
+        const result = [1,2,3]
+        expect(carried(1)(2,3)).toEqual(result)
     })
 
 })
