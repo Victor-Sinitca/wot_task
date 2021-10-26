@@ -40,7 +40,9 @@ describe("bind", () => {
 describe("call", () => {
     it("1", () => {
         const result = 48
+        const result1 = 51
         expect(FuncUtils.call(getSum,person,1,2,3)).toEqual(result)
+        expect(FuncUtils.call(getSum,person,3,3,3)).toEqual(result1)
     })
 
 })
