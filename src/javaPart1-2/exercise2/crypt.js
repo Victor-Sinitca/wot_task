@@ -1,6 +1,8 @@
 const keyValid = (key) => {
     const reg = /^[a-zA-Z0-9]+$/
+    const set = new Set(key)
     return typeof key === "string" && key.length === 10 && reg.test(key)
+        && key.length === set.size
 }
 const codeValid = (code) => {
     code = +code

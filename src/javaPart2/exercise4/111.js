@@ -1,29 +1,25 @@
-/*module.exports = {
-    bind(func, obj) {
-        let myThis=this
+/*const MyObj={
+    bind (func, obj) {
+        const myObj=this
+        let myF = func
         const arg = []
-        if(typeof func !== 'function'){
-            throw new Error('Упс');
-        }
         for (let i = 0; i < arguments.length; i++) {
             if (i > 1) arg.push(arguments[i])
+        }
+        let index = function () {
         }
         let fBound = function () {
             let bindArgs = []
             for (let i = 0; i < arguments.length; i++) {
                 bindArgs.push(arguments[i])
             }
-            let newArg=arg.concat(bindArgs)
-            if (!(this instanceof fBound)){
-                return myThis.apply(func,obj, newArg);
-            }
-            myThis.apply(func,this, newArg);
+            return myObj.apply(myF,this instanceof index ? this : obj,arg.concat(bindArgs))
         }
-        fBound.prototype = func.prototype;
+        index.prototype = this.prototype;
+        fBound.prototype = new index();
         return fBound;
     },
-
-    call(func, obj) {
+    call  (func, obj) {
         obj.func = func
         const arg = []
         for (let i = 0; i < arguments.length; i++) {
@@ -38,7 +34,7 @@
         delete obj.func
         return result
     },
-    apply(func, obj, arr) {
+    apply  (func, obj, arr) {
         obj.func = func
         const arg = []
         arr = arr || []
@@ -49,8 +45,8 @@
         delete obj.func
         return result
     }
-
-}*/
+}
+module.exports = MyObj*/
 function Function() {
 }
 Function.prototype.bind = function (func, obj) {
@@ -103,6 +99,4 @@ Function.prototype.apply = function (func, obj, arr) {
     delete obj.func
     return result
 }
-module.exports = new Function()
-
-
+module.exports = new  Function()
