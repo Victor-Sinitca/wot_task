@@ -86,7 +86,7 @@ export const preorderTraversalRec = (date) => {
     let preorder = []
     function searchNodes(node) {
         if (node.tagName) preorder.push(node.tagName)
-        if (node.children) {
+        if (node.firstElementChild) {
             let nextNode = node.firstElementChild
             while (nextNode) {
                 searchNodes(nextNode)
@@ -101,7 +101,7 @@ export const preorderTraversalRec = (date) => {
 export const postOrderTraversalRec = (date) => {
     let postOrder = []
     function searchNodes(node) {
-        if (node.children) {
+        if (node.firstElementChild) {
             let nextNode = node.firstElementChild
             while (nextNode) {
                 searchNodes(nextNode)
@@ -122,9 +122,11 @@ export const levelOrderTraversalRec = (date) => {
         if(queue.length){
             let node = queue.take();
             if (node.tagName) levelOrder.push(node.tagName)
-            if (node.children.length) {
-                for (let i = 0; i < node.children.length; i++) {
-                    queue.put(node.children[i]);
+            if (node.firstElementChild) {
+                let nodeElem=node.firstElementChild
+                while (nodeElem){
+                    queue.put(nodeElem);
+                    nodeElem=nodeElem.nextElementSibling
                 }
             }
             traversal()
@@ -147,7 +149,7 @@ export const levelOrderTraversalRec1 = (date) => {
             mass[level].push(node.tagName)
             level++
         }
-        if (node.children) {
+        if (node.firstElementChild) {
             let nextNode = node.firstElementChild
             while (nextNode) {
                 searchNodes(nextNode)
@@ -182,7 +184,7 @@ export const allOrderTraversalsRec = (date) => {
             mass[level].push(node.tagName)
             level++
         }
-        if (node.children) {
+        if (node.firstElementChild) {
             let nextNode = node.firstElementChild
             while (nextNode) {
                 searchNodes(nextNode)
@@ -211,12 +213,19 @@ export const allOrderTraversalsRec = (date) => {
 export const preorderTraversalNoRec = (date) => {
     let preorder = []
     let stack = []
+    let stackBuf = []
     let node = date;
     while (node) {
         if (node.tagName) preorder.push(node.tagName)
-        if (node.children) {
-            for (let i = node.children.length - 1; i >= 0; i--)
-                stack.push(node.children[i]);
+        if (node.firstElementChild) {
+            let nextNode = node.firstElementChild
+            while (nextNode) {
+                stackBuf.push(nextNode);
+                nextNode = nextNode.nextElementSibling
+            }
+            while (stackBuf.length){
+                stack.push(stackBuf.pop())
+            }
         }
         node = stack.pop()
     }
@@ -228,15 +237,28 @@ export const postOrderTraversalNoRec = (date) => {
     let postOrder = []
     let lastDeleteChild = null
     let stack = []
+    let stackBuf = []
     let node = date;
     while (node) {
-        if (node.children.length > 0) {
-            if (lastDeleteChild && node.lastElementChild === lastDeleteChild) {
+        if (node.firstElementChild) {
+            let lastElementChild = node.firstElementChild
+            while (lastElementChild){
+                if(lastElementChild.nextElementSibling){
+                    lastElementChild = lastElementChild.nextElementSibling
+                }else break
+            }
+            if (lastDeleteChild && lastElementChild === lastDeleteChild) {
                 lastDeleteChild = stack.pop()
                 postOrder.push(lastDeleteChild.tagName)
             } else {
-                for (let i = node.children.length - 1; i >= 0; i--)
-                    stack.push(node.children[i]);
+                let nextNode = node.firstElementChild
+                while (nextNode) {
+                    stackBuf.push(nextNode);
+                    nextNode = nextNode.nextElementSibling
+                }
+                while (stackBuf.length){
+                    stack.push(stackBuf.pop())
+                }
             }
         } else {
             lastDeleteChild = stack.pop()
@@ -254,12 +276,14 @@ export const levelOrderTraversalNoRec = (date) => {
     let queue = new Queue(date);
     while (queue.length) {
         let node = queue.take();
-        if (!node.children.length) {
+        if (!node.firstElementChild) {
             continue;
         }
-        for (let i = 0; i < node.children.length; i++) {
-            levelOrder.push(node.children[i].tagName);
-            queue.put(node.children[i]);
+        let nextNode = node.firstElementChild
+        while(nextNode){
+            levelOrder.push(nextNode.tagName);
+            queue.put(nextNode);
+            nextNode = nextNode.nextElementSibling
         }
     }
     return levelOrder.join(`,`)

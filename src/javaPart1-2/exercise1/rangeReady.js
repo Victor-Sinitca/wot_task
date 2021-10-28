@@ -5,8 +5,6 @@ module.exports = function range(from, to, step) {
     if (from === Infinity && to === Infinity ) return []
     if (from === -Infinity && to === -Infinity ) return []
 
-
-
     if (from !== 0 && !from) return []
     if (to !== 0 && !to) {
         to = from
@@ -36,7 +34,6 @@ module.exports = function range(from, to, step) {
     while (length--) {
         returnArray[index++] = from
         from = Math.round((from + step) * 1000) / 1000
-        /*from += step*/
     }
     return returnArray
 }

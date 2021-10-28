@@ -28,11 +28,12 @@ function examp(a, d, f, g) {
 }
 
 let age = examp.bind(man)
-let age1=age(1,2,3,4)
-let age3 = Func.bind(examp,man,1,2,3)
+let age1=age(1,2,3,5)
+let age3 = Func.bind(examp,man,1,2,4)
 console.log(Func)
+console.log(examp.call(man,1,2,3,6))
 
-console.log(Func.bind(examp,man,1,2,3,4)())
+console.log(Func.bind(examp,man,1,2,3,5)())
 console.log(age3(4))
 console.log(age(1,2,3,4))
 console.log(age1)

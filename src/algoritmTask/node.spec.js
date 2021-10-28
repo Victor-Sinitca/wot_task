@@ -3,7 +3,7 @@ import {
     postOrderTraversalRec, levelOrderTraversalNoRec,
     preorderTraversalRec,
     preorderTraversalNoRec, postOrderTraversalNoRec, allOrderTraversalsRec, Queue, levelOrderTraversalRec1
-} from "../algoritmTask/treeTraversal";
+} from "./treeTraversal1";
 const {TextEncoder, TextDecoder} = require('util');
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
@@ -63,9 +63,6 @@ describe('node', () => {
     it('level order traversal1', () => {
         expect(allOrderTraversalsRec(dom.window.document).levelOrder).toBe('HTML,HEAD,BODY,META,TITLE,DIV,LABEL,H1,H2,H3,SPAN,A,B')
     })
-
-
-
     it('preorder traversal no rec', () => {
         expect(preorderTraversalNoRec(dom.window.document)).toBe('HTML,HEAD,META,TITLE,BODY,DIV,H1,SPAN,H2,A,H3,B,LABEL')
     })

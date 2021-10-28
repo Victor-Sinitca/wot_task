@@ -76,7 +76,6 @@ describe("call", () => {
         expect(FuncUtils.call(getSum, person, 1, 2, 3)).toEqual(result)
         expect(FuncUtils.call(getSum, man, 3, 3, 3)).toEqual(result1)
     })
-
 })
 describe("apply", () => {
     it("1", () => {

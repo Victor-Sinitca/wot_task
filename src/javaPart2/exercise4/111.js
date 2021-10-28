@@ -53,6 +53,7 @@ Function.prototype.bind = function (func, obj) {
     let myThis=this
     const arg = []
     if(typeof func !== 'function'){
+        return new errore()
         throw new Error('Упс');
     }
     for (let i = 0; i < arguments.length; i++) {
