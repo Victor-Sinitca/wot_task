@@ -20,6 +20,7 @@ body {
 }
 
 .umbrella:before {
+    /*зонтик*/
     background-image: radial-gradient(ellipse farthest-corner at 200% 130%, #976df6 20%, #8d65d9 68%, #382370 70%, transparent 70%),
     radial-gradient(ellipse farthest-corner at -100% 130%, #976df6 20%, #8d65d9 68%, #382370 70%, transparent 70%),
     radial-gradient(ellipse farthest-corner at 200% 130%, #5226be 20%, #8d65d9 68%, #382370 70%, transparent 70%),
@@ -63,11 +64,18 @@ body {
     position: absolute;
     margin-left: -0px;
     width: 500px;
-    animation: loaderX 4s infinite ease-in-out;
+   /* animation: loaderX 4s infinite ease-in-out;*/
+}
+.umbrella {
+    min-height: 400px;
+    width: 80px;
+    border-bottom: #8a5ce2 10px solid;
+    border-right: #8a5ce2 10px solid;
+    border-radius: 0 0 50% 50%/ 0 0 10%  10% ;
+
 
 }
-
-.umbrella {
+/*.umbrella {
     min-height: 500px;
     width: 500px;
     background-image:
@@ -121,7 +129,7 @@ body {
 ;
     background-repeat: no-repeat;
 
-}
+}*/
 
 
 .umbrella::after {
@@ -129,7 +137,7 @@ body {
     width: 500px;
     content: '';
     position: absolute;
-    /*background-color: #61dafb;*/
+   /* background-color: #61dafb;*/
     opacity: 0.2;
     background-image:
             linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),

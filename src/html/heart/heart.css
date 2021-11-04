@@ -3,6 +3,10 @@
     height: 50px;
     width: 50px;
     margin: 0 0px;
+    border-right: 5px transparent solid;
+    border-bottom: 5px transparent solid;
+    border-top: 5px transparent solid;
+    border-left: 5px transparent solid;
 
     position: absolute;
     left: 25%; top: 25%;
@@ -15,16 +19,15 @@
 .heart:before,
 .heart:after {
     content: "";
-
+    border-right: 5px transparent solid;
+    border-bottom: 5px transparent solid;
+    border-top: 5px transparent solid;
+    border-left: 5px transparent solid;
     position: absolute;
     height: 25px;
     width: 50px;
-    /*transform: rotate(45deg);*/
     border-radius: 50% 50% 0 0/100%  100% 0 0 ;
-    background-color: #551b1b;
-   /* border-radius: 50%;*/
-}
-.heart:before{
+    background-color: red;
 
 }
 .heart:after{
@@ -32,44 +35,32 @@
 }
 
 .heart:before {
-    top: -25px;
-    left: 0px;
+    top: -35px;
+    left: -5px;
 }
 
 .heart:after {
-    left: 37px;
-    top: 12px;
+    left: 37.5px;
+    top: 7.5px;
 }
 
-.heart:active {
-    background-color: white;
-    height: 40px;
-    width: 40px;
+.heart:hover {
+    background-color: #c95454;
     border-bottom: 5px #a30808 solid;
     border-left: 5px #a30808 solid;
-    border-top: 5px white solid;
-    border-right: 5px white solid;
+    border-top: 5px #c95454 solid;
+    border-right: 5px #c95454 solid;
 }
 
-.heart:active:after {
-    background-color: white;
-    left: 28px;
-    top: 2.5px;
-    height: 25px;
-    width: 45px;
+.heart:hover:after,
+.heart:hover:before {
+    background-color: #c95454;
+    border-right: 5px #c95454 solid ;
+
     border-left: 5px #a30808 solid ;
     border-right: 5px #a30808 solid  ;
     border-top: 5px #a30808 solid  ;
 
 }
 
-.heart:active:before {
-    background-color: white;
-    top: -30px;
-    left: -5px;
-    height: 25px;
-    width: 45px;
-    border-left: 5px #a30808 solid ;
-    border-right: 5px #a30808 solid ;
-    border-top: 5px #a30808 solid  ;
-}
+
