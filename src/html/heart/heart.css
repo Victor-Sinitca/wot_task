@@ -1,4 +1,5 @@
 .heart {
+    box-sizing: border-box;
     display: inline-block;
     height: 50px;
     width: 50px;
@@ -18,14 +19,15 @@
 
 .heart:before,
 .heart:after {
+    box-sizing: border-box;
     content: "";
+    position: absolute;
+    height: 25px;
+    width: 50px;
     border-right: 5px transparent solid;
     border-bottom: 5px transparent solid;
     border-top: 5px transparent solid;
     border-left: 5px transparent solid;
-    position: absolute;
-    height: 25px;
-    width: 50px;
     border-radius: 50% 50% 0 0/100%  100% 0 0 ;
     background-color: red;
 
@@ -45,17 +47,17 @@
 }
 
 .heart:hover {
-    background-color: #c95454;
+    background-color: transparent;
     border-bottom: 5px #a30808 solid;
     border-left: 5px #a30808 solid;
-    border-top: 5px #c95454 solid;
-    border-right: 5px #c95454 solid;
+    border-top: 5px transparent solid;
+    border-right: 5px transparent solid;
 }
 
 .heart:hover:after,
 .heart:hover:before {
-    background-color: #c95454;
-    border-right: 5px #c95454 solid ;
+    background-color: transparent;
+    border-bottom: 5px transparent solid ;
 
     border-left: 5px #a30808 solid ;
     border-right: 5px #a30808 solid  ;
