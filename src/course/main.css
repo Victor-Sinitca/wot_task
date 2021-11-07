@@ -1,0 +1,94 @@
+.mainContent{
+    display: flex;
+   /* flex-direction: column;*/
+    flex-wrap: wrap;
+}
+.product{
+    position: relative;
+    height:300px;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin: 1px;
+}
+.product a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.imgBG{
+    height: auto;
+    width: 95%;
+}
+.like{
+    border: none;
+    font-size: 0px;
+    cursor: pointer;
+}
+.description{
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    margin: 30px;
+}
+.descriptionProduct{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.flag{
+    height:14px;
+    width: 21px;
+    font-size: 0px;
+    background-image: url("./assets/img/Layer 41.png");
+    margin-right: 10px;
+}
+.typ{
+    height:12px ;
+    width: 10px;
+    font-size: 0px;
+    background-image: url("./assets/img/Shape 4 copy 3.png");
+    margin-right: 10px;
+}
+.price{
+    color: #d1b482;
+}
+.descriptionProduct h2{
+    font-size: 15px ;
+    color: #cccccc;
+    font-weight: normal;
+    margin: 0;
+}
+.buttonSt{
+    height: 39px;
+    width: 100px;
+    display: none;
+    position: relative;
+    text-transform: uppercase;
+    border: none;
+    font-size: 12px;
+    color: #ffffff;
+    cursor: pointer;
+    bottom: 0;
+    left: 0;
+    background-color: #e95104;
+    margin-top: 10px;
+
+}
+.buttonSt:hover{
+    border: 1px solid #c44303;
+   /* box-shadow: 0px 0px 2px 2px #c44303 inset, 0px 0px 1px 1px #c44303;*/
+
+}
+.product:hover{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.product:hover .imgBG{
+    opacity: 0.5;
+}
+.product:hover .buttonSt{
+    display: block;
+}

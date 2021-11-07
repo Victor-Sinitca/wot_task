@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="heart">
+</div>
+<div class="heart" style="--d:100px;">
+</div>
+<div class="heart" style="--d:50px;">
+</div>
+
+</body>
+<style>
+    .heart {
+        --d:200px;
+        width:var(--d);
+        height:var(--d);
+        background:
+                radial-gradient(circle at 50% 83%, red 29%, transparent 30%) calc(-1 * var(--d)/5) calc(-1 * var(--d)/2)/100% 100%,
+                radial-gradient(circle at 50% 83%, red 29%, transparent 30%) calc(var(--d)/5) calc(-1 * var(--d)/2)/100% 100%,
+                linear-gradient(to bottom left,red 43%,transparent 43%) bottom left/50% 50%,
+                linear-gradient(to bottom right,red 43%,transparent 43%) bottom right/50% 50%;
+        background-repeat:no-repeat;
+        display:inline-block;
+        animation: anim 2s infinite
+    }
+    @-webkit-keyframes anim{
+        0%{
+            transform: scale(1);
+
+        }
+        50%{
+            transform: scale(1.5);
+        }
+        100%{
+            transform: scale(1);
+        }
+
+
+    }
+</style>
+</html>
+
