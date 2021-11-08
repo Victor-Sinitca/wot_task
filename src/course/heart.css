@@ -1,6 +1,6 @@
 .heart {
-    --d: 20px;
-    --bor: 3px;
+    --d: 15px;
+    --bor:3.5px;
     width: var(--d);
     height: var(--d);
     display: inline-block;
@@ -9,7 +9,7 @@
     top: 0;
     right: 0;
 
-    background-color: rgba(255, 0, 0, 1);
+    background-color: #929292;
 
     transform: rotate(-45deg);
 }
@@ -21,7 +21,7 @@
     height: calc(var(--d) / 2);
     width: var(--d);
     border-radius: 50% 50% 0 0/100% 100% 0 0;
-    background-color: rgba(255, 0, 0, 1);
+    background-color: #929292;
 
 }
 
@@ -32,46 +32,46 @@
     height: var(--d);
     width: calc(var(--d) / 2);
     border-radius: 0 100% 100% 0   / 0  50% 50% 0 ;
-    background-color: rgba(255, 0, 0, 1);
+    background-color: #929292;
 }
 
 .heart:before {
-    top: calc(var(--d) / -2.1);
+    top: calc(var(--d) / -2.2);
     left: 0;
 
 }
 
 .heart:after {
-    left: calc(var(--d)*0.95);
+    left: calc(var(--d)*0.92);
     top: 0;
 }
 
 .heart:focus {
     background-color: transparent;
     background-image:
-            linear-gradient(#a30808 100%, transparent 0)
-            , linear-gradient(#a30808 100%, transparent 0)
-            , linear-gradient(#a30808 100%, transparent 0);
+            linear-gradient(#929292 100%, transparent 0)
+            , linear-gradient(#929292 100%, transparent 0)
+            , linear-gradient(#929292 100%, transparent 0);
     background-position: 100% 0, 0 0, 100% 100%;
     background-size:
             calc(var(--bor) * 1) calc(var(--bor) * 1)
             ,calc(var(--bor) * 1 ) calc(var(--d) * 2)
-            ,calc(var(--d) * 2) calc(var(--bor) * 1 ) ;
+            ,calc(var(--d) * 2) calc(var(--bor) * 1) ;
     background-repeat: no-repeat;
 }
 
 .heart:focus:before {
     background: transparent;
-    border-left: var(--bor) #a30808 solid;
-    border-right: var(--bor) #a30808 solid;
-    border-top: var(--bor) #a30808 solid;
+    border-left: var(--bor) #929292 solid;
+    border-right: var(--bor) #929292 solid;
+    border-top: var(--bor) #929292 solid;
 
 }
 .heart:focus:after{
     background: transparent;
-    border-bottom: var(--bor) #a30808 solid;
-    border-right: var(--bor) #a30808 solid;
-    border-top: var(--bor) #a30808 solid;
+    border-bottom: var(--bor) #929292 solid;
+    border-right: var(--bor) #929292 solid;
+    border-top: var(--bor) #929292 solid;
 
 }
 
