@@ -1,81 +1,85 @@
 .heart {
-    --d: 100px;
-    --bor: 20px;
+    --d: 40px;
+    --bor: 5px;
     width: var(--d);
     height: var(--d);
     display: inline-block;
-    margin: 0 0;
+
     position: absolute;
-    left: 2.5%;
-    top: 5%;
+    margin-top: calc(var(--d) /2);
 
     background-color: rgba(255, 0, 0, 1);
 
-    transform: rotate(-0deg);
-
-    background-image:
-            linear-gradient(rgba(255, 0, 0, 1) 90%, transparent 10%)
-            , linear-gradient(rgba(255, 0, 0, 1) 90%, transparent 10%);
-    background-position: 100% 0, 0 0%;
-    background-size:
-            calc(var(--bor) * 1) calc(var(--bor) * 1.1)
-            ,  calc(var(--bor) * 1 ) calc(var(--d) * 2);
-    background-repeat: no-repeat;
+    transform: rotate(-45deg);
 }
 
-.heart:before,
-.heart:after {
+.heart:before {
     box-sizing: border-box;
     content: "";
     position: absolute;
     height: calc(var(--d) / 2);
     width: var(--d);
-    border-right: var(--bor) transparent solid;
-    border-bottom: var(--bor) transparent solid;
-    border-top: var(--bor) transparent solid;
-    border-left: var(--bor) transparent solid;
-
-
-    border-radius: 50% 50% 0% 0%/100% 100% 0% 0%;
+    border-radius: 50% 50% 0 0/100% 100% 0 0;
     background-color: rgba(255, 0, 0, 1);
 
 }
 
 .heart:after {
-    transform: rotate(90deg);
+    box-sizing: border-box;
+    content: "";
+    position: absolute;
+    height: var(--d);
+    width: calc(var(--d) / 2);
+    border-radius: 0 100% 100% 0   / 0  50% 50% 0 ;
+    background-color: rgba(255, 0, 0, 1);
 }
 
 .heart:before {
     top: calc(var(--d) / -2.1);
-    left: 0;
+
+
 }
 
 .heart:after {
-    left: calc(var(--d) / 1.35);
-    top: calc(var(--d) / 4);
+    left: calc(var(--d)*0.95);
 }
 
 .heart:hover {
     background-color: transparent;
     background-image:
-            linear-gradient(#a30808 90%, transparent 10%)
-            , linear-gradient(#a30808 90%, transparent 10%)
-            , linear-gradient(#a30808 90%, transparent 10%);
-    background-position: 100% 0, 0% 0%, 100% 103%;
+            linear-gradient(#a30808 100%, transparent 0)
+            , linear-gradient(#a30808 100%, transparent 0)
+            , linear-gradient(#a30808 100%, transparent 0);
+    background-position: 100% 0, 0 0, 100% 100%;
     background-size:
-            calc(var(--bor) * 1) calc(var(--bor) * 1.1)
+            calc(var(--bor) * 1) calc(var(--bor) * 1)
             ,calc(var(--bor) * 1 ) calc(var(--d) * 2)
-            ,calc(var(--d) * 2) calc(var(--bor) * 1.1 ) ;
+            ,calc(var(--d) * 2) calc(var(--bor) * 1 ) ;
     background-repeat: no-repeat;
 }
 
-.heart:hover:after,
 .heart:hover:before {
-    background-color: rgba(255, 0, 0, 0);
+    background: transparent;
     border-left: var(--bor) #a30808 solid;
+    border-right: var(--bor) #a30808 solid;
+    border-top: var(--bor) #a30808 solid;
+
+}
+.heart:hover:after{
+    background: transparent;
+    border-bottom: var(--bor) #a30808 solid;
     border-right: var(--bor) #a30808 solid;
     border-top: var(--bor) #a30808 solid;
 
 }
 
 
+
+.div{
+    margin: 50px;
+    background-color: #8a5ce2;
+    height: 100px;
+    width: 100px;
+    border-radius: 25px;
+
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="border.scss">
+    <title>border</title>
+</head>
+<body>
+<div class="container">
+    <div class="border">
+        border background: #e18728 content-box;
+    </div>
+    <div class="border1">
+        border1 background-clip:border-box
+    </div>
+    <div class="border2">
+        border2 background-clip:padding-box
+    </div>
+    <div class="border3">
+        border3  background-clip:padding-box
+    </div>
+</div>
+<div class="container">
+    <div class="border11">
+        border11 background-origin:padding-box;
+    </div>
+    <div class="border11 border12">
+        border12  background-origin:border-box;
+    </div>
+    <div class="border11 border13">
+        border13  background-origin:content-box;
+    </div>
+</div>
+<div class="container">
+    <div class="border21">
+        border21  background: linear-gradient(#e18728, rgba(255,130,40, 0) 80%) content-box;
+    </div>
+
+</div>
+<!--<div class="container">
+    <button class="button1"></button>
+</div>-->
+
+
+</body>
+<style>
+    body {
+        background-color: #4eaa4f;
+        margin: 0 auto;
+    }
+
+    .container{
+        display: flex;
+    }
+    .border {
+        margin: 20px;
+        width: max-content;
+        border: solid 10px #be4c39;
+        padding: 10px;
+        background: #e18728 content-box;
+    }
+    .border1 {
+        margin: 20px;
+        width: max-content;
+        border:  10px dotted rgba(255,255,0,0.5);
+        padding: 10px;
+        background: #e18728;
+        background-size: 50% 50%;
+        background-clip:border-box;
+    }
+    .border2 {
+        margin: 20px;
+        width: max-content;
+        border:  10px dotted rgba(255,255,0,0.5);
+        padding: 10px;
+        background: #e18728;
+        background-size: 50% 50%;
+        background-clip:padding-box;
+    }
+    .border3 {
+        margin: 20px;
+        width: max-content;
+        border:  10px dotted rgba(255,255,0,0.5);
+        padding: 10px;
+        background: #e18728;
+        background-size: 50% 50%;
+        background-clip:content-box;
+    }
+    .border11 {
+        margin: 20px;
+        height: 100px;
+        width: max-content;
+        border:  10px dotted rgba(255,255,0,0.5);
+        padding: 20px;
+        background: linear-gradient(to right bottom, #e18728, #be4c39, #9351a6, #4472b9), url(https://static4.depositphotos.com/1000423/454/i/600/depositphotos_4548401-stock-photo-symbol-of-yin-and-yang.jpg) 100% 100%;
+        background-repeat: no-repeat;
+        background-size: 50% 50%;
+        background-origin:padding-box;
+    }
+    .border12 {
+        background-origin:border-box;
+    }
+    .border13 {
+        background-origin:content-box;
+    }
+
+    .border21 {
+        margin: 20px;
+        height: 100px;
+        width: max-content;
+        border: solid 10px;
+        border-image: linear-gradient(#be4c39, rgba(190,76,57,0.5)  30%, rgba(255,130,40, 0.4) 90%) 1;
+        padding: 20px;
+        background: linear-gradient(#e18728, rgba(255,130,40, 0) 100%) content-box;
+    }
+
+</style>
+</html>

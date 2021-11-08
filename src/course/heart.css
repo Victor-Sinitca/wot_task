@@ -1,81 +1,80 @@
 .heart {
-    --d: 15px;
-    --bor: 2px;
+    --d: 20px;
+    --bor: 3px;
     width: var(--d);
     height: var(--d);
     display: inline-block;
-    margin: 0 0;
     position: absolute;
-    right: 15px;
-    top: 15px;
+    margin: 20px;
+    top: 0;
+    right: 0;
 
-    background-color: #929292;
+    background-color: rgba(255, 0, 0, 1);
 
     transform: rotate(-45deg);
-
-    background-image:
-            linear-gradient(#929292 90%, transparent 10%)
-            , linear-gradient(#929292 90%, transparent 10%);
-    background-position: 100% 0, 0 0%;
-    background-size:
-            calc(var(--bor) * 1) calc(var(--bor) * 1.1)
-            ,  calc(var(--bor) * 1 ) calc(var(--d) * 2);
-    background-repeat: no-repeat;
 }
 
-.heart:before,
-.heart:after {
+.heart:before {
     box-sizing: border-box;
     content: "";
     position: absolute;
     height: calc(var(--d) / 2);
     width: var(--d);
-    border-right: var(--bor) transparent solid;
-    border-bottom: var(--bor) transparent solid;
-    border-top: var(--bor) transparent solid;
-    border-left: var(--bor) transparent solid;
-
-
-    border-radius: 50% 50% 0% 0%/100% 100% 0% 0%;
-    background-color: #929292;
+    border-radius: 50% 50% 0 0/100% 100% 0 0;
+    background-color: rgba(255, 0, 0, 1);
 
 }
 
 .heart:after {
-    transform: rotate(90deg);
+    box-sizing: border-box;
+    content: "";
+    position: absolute;
+    height: var(--d);
+    width: calc(var(--d) / 2);
+    border-radius: 0 100% 100% 0   / 0  50% 50% 0 ;
+    background-color: rgba(255, 0, 0, 1);
 }
 
 .heart:before {
     top: calc(var(--d) / -2.1);
     left: 0;
+
 }
 
 .heart:after {
-    left: calc(var(--d) / 1.35);
-    top: calc(var(--d) / 4);
+    left: calc(var(--d)*0.95);
+    top: 0;
 }
 
-.heart:hover {
+.heart:focus {
     background-color: transparent;
     background-image:
-            linear-gradient(#929292 90%, transparent 10%)
-            , linear-gradient(#929292 90%, transparent 10%)
-            , linear-gradient(#929292 90%, transparent 10%);
-    background-position: 100% 0, 0% 0%, 100% 103%;
+            linear-gradient(#a30808 100%, transparent 0)
+            , linear-gradient(#a30808 100%, transparent 0)
+            , linear-gradient(#a30808 100%, transparent 0);
+    background-position: 100% 0, 0 0, 100% 100%;
     background-size:
-            calc(var(--bor) * 1) calc(var(--bor) * 1.1)
+            calc(var(--bor) * 1) calc(var(--bor) * 1)
             ,calc(var(--bor) * 1 ) calc(var(--d) * 2)
-            ,calc(var(--d) * 2) calc(var(--bor) * 1.1 ) ;
+            ,calc(var(--d) * 2) calc(var(--bor) * 1 ) ;
     background-repeat: no-repeat;
 }
 
-.heart:hover:after,
-.heart:hover:before {
-    background-color: rgba(255, 0, 0, 0);
-    border-left: var(--bor) #929292 solid;
-    border-right: var(--bor) #929292 solid;
-    border-top: var(--bor) #929292 solid;
+.heart:focus:before {
+    background: transparent;
+    border-left: var(--bor) #a30808 solid;
+    border-right: var(--bor) #a30808 solid;
+    border-top: var(--bor) #a30808 solid;
 
 }
+.heart:focus:after{
+    background: transparent;
+    border-bottom: var(--bor) #a30808 solid;
+    border-right: var(--bor) #a30808 solid;
+    border-top: var(--bor) #a30808 solid;
+
+}
+
+
 
 
