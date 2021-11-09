@@ -11,16 +11,15 @@ body{
 
 }
 .mainNav{
-    height: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .mainNav span{
-    /*height: 100%;
+    height: 100%;
     font-size: 0px;
     background-image: url("./assets/img/Logo.png") ;
-    background-repeat: no-repeat;*/
+    background-repeat: no-repeat;
 }
 .mainNav a{
     padding: 5px ;
@@ -54,11 +53,9 @@ headerNav{
     font-size: 15pt ;
     text-decoration: none;
 }
-.wishlist::before{
-    content: "";
-}
 .wishlist::after{
     content: "";
+    display: inline-block;
     height: 14px;
     width: 16px;
     background-image: url("./assets/images/valentines-heart.png");
@@ -71,26 +68,27 @@ headerNav{
 }
 .shopping::before{
     content: "";
+    display: inline-block;
     height: 16px;
     width: 16px;
     background-image: url("./assets/images/cart.png");
     background-repeat: no-repeat;
 }
 
-.account a{
+.create{
     display: none;
-   /* color: #919191;
-    text-decoration: none;
-    font-size: 15pt ;*/
 }
-
 .account span{
     display: none;
+
 }
+
 .login{
+    display: inline-block;
+    font-size: 0 ;
     height: 17px;
     width: 20px;
-    display: inline-block;
+
     background-image: url("./assets/images/ico.png");
 }
 
