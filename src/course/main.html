@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <link href="html.css" rel="stylesheet">
+    <link href="main.css"   rel="stylesheet">
+    <link href="html320.css"  media="screen and (max-device-width: 320px)" rel="stylesheet">
+    <link href="main320.css" media="screen and (max-device-width: 320px)"  rel="stylesheet">
     <link href="heart.css" rel="stylesheet">
-    <link href="main.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon"
           href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX4w-lsMBPNGq-dIqjliDK8isBdqYpiyWvfQ&usqp=CAU"/>
@@ -18,12 +20,12 @@
             <h1> premium shop </h1>
         </div>
         <nav class="headerNav">
-            <span><a href="#">Wishlist</a> (2)</span>
-            <span><a href="#">Shopping cart</a> (5)</span>
-            <span class="spanOr">
-                <a href="#">Login</a>
-                 or
-                <a href="#">Create account</a>
+            <a class="wishlist" href="#">(2)</a>
+            <a class="shopping" href="#">(5)</a>
+            <span class="account">
+                <a class="login" href="#">Login</a>
+                <span>or</span>
+                <a class="create" href="#">Create account</a>
             </span>
         </nav>
     </div>
@@ -42,7 +44,7 @@
         <main class="mainContent">
             <div class="product">
                 <a href="#"><img class="imgBG" src="./assets/img/Layer%2042.png"
-                                 height="250" alt="Танк"></a>
+                                 alt="Танк"></a>
                 <button class="like heart">Поставить лайк</button>
                 <div class="description">
                     <div class="descriptionProduct">
@@ -56,7 +58,7 @@
             </div>
             <div class="product">
                 <a href="#"><img class="imgBG" src="./assets/img/Layer%2042.png"
-                                 height="250" alt="Танк"></a>
+                                 alt="Танк"></a>
                 <button class="like heart">Поставить лайк</button>
                 <div class="description">
                     <div class="descriptionProduct">

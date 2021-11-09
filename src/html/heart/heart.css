@@ -1,11 +1,11 @@
 .heart {
-    --d: 40px;
-    --bor: 5px;
+    --d: 50px;
+    --bor: 3px;
     width: var(--d);
     height: var(--d);
     display: inline-block;
 
-    position: absolute;
+    position: relative;
     margin-top: calc(var(--d) /2);
 
     background-color: rgba(255, 0, 0, 1);
@@ -83,3 +83,21 @@
     border-radius: 25px;
 
 }
+.div1{
+    margin: 50px;
+    background-color: #fabb52;
+    border-radius: 150px;
+    border: 4px solid #f69024;
+    height: 300px;
+    width: 300px;
+
+    background-image:
+            radial-gradient(ellipse farthest-corner at 50% 0%,transparent 10%, #976df6 10%, #3f03c4 40% , transparent 40% );
+
+    background-position: 20% 20%;
+    background-size: 30% 15%;
+    background-repeat: no-repeat;
+
+}
+
+

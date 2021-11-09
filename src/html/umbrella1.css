@@ -64,161 +64,36 @@ body {
     position: absolute;
     margin-left: -0px;
     width: 500px;
-   /* animation: loaderX 4s infinite ease-in-out;*/
+    /*animation: loaderX 4s infinite ease-in-out;*/
 }
+
 .umbrella {
-    min-height: 400px;
-    width: 80px;
-    border-bottom: #8a5ce2 10px solid;
-    border-right: #8a5ce2 10px solid;
-    border-radius: 0 0 50% 50%/ 0 0 10%  10% ;
-
-
-}
-/*.umbrella {
     min-height: 500px;
     width: 500px;
-    background-image:
-    radial-gradient(ellipse farthest-corner at 200% 70%, #5226be 20%, #8d65d9 68%, #382370 70%, transparent 70%),
-    radial-gradient(ellipse farthest-corner at -100% 70%, #5226be 20%, #8d65d9 68%, #382370 70%, transparent 70%),
-    radial-gradient(ellipse farthest-side at 35% 50%, #8b8b00 0.5%,#ffd400 25%, #ffd400 50%, #d2c6ae 50%, transparent 70%),
-    radial-gradient(ellipse farthest-side at 35% 50% , #8b8b00 0.5%,#ffd400 25%, #ffd400 50%, #d2c6ae 50%, transparent 70%),
+    background-image: radial-gradient(ellipse farthest-corner at 50% 100%, #5226be 30%, #8d65d9 68%, #382370 60%, transparent 70%),
+    linear-gradient(to left, #5226be 100%, transparent 100%),
+    radial-gradient(ellipse farthest-corner at 50% 0%, transparent 21%, #5226be 21.2%, #5226be 35.1%, transparent 35.2%),
+    radial-gradient(ellipse farthest-corner at 50% 100%,  #5226be 10%, transparent 10%);
 
-    radial-gradient(circle farthest-side at 50% -80%, #8b8b00 0.5%,#ffd400 25%, #ffd400 50%, #d2c6ae 50%, transparent 62%),
+    background-position: 50.02% 5%,
+    50% 50%,
+    45.05% 94.4%,
+    40.79% 84.00%;
 
-    radial-gradient(circle, #f8b47a 50%, transparent 60%),
+    background-size: 1.2% 20%,
+    2% 70%,
+    20% 10%,
+    14% 7%;
 
-    linear-gradient(rebeccapurple 90%, transparent 10%),
-    radial-gradient(circle,  gold 50%, transparent 50%),
-    radial-gradient(circle farthest-side at top, rebeccapurple 50%, transparent 50%);
-
-
-    background-position:
-    49.6% 0%,
-    50.4% 0%,
-
-
-    41.4% 85%,
-    46.2% 85%,
-
-    43.2% 93%,
-
-    42.5% 91%,
-
-
-
-    50% 74%,
-    42.5% 91%,
-    42.5% 100%
-;
-    background-size:
-    0.8% 20%,
-    0.8% 20%,
-
-    4% 2%,
-    4% 2%,
-
-    9% 6%,
-
-    15% 15%,
-
-
-    2.2% 70%,
-    15% 15%,
-    15% 15%
-;
-    background-repeat: no-repeat;
-
-}*/
-
-
-.umbrella::after {
-    min-height: 500px;
-    width: 500px;
-    content: '';
-    position: absolute;
-   /* background-color: #61dafb;*/
-    opacity: 0.2;
-    background-image:
-            linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-            linear-gradient(#7610e2 90%, transparent 10%),  linear-gradient(#7610e2 90%, transparent 10%),
-            linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-            linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-            linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-            linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-            linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-            linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-            linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-            linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-
-
-    linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-    linear-gradient(#7610e2 90%, transparent 10%),  linear-gradient(#7610e2 90%, transparent 10%),
-    linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-    linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-    linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-    linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-    linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-    linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-    linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-    linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-
-linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-linear-gradient(#7610e2 90%, transparent 10%),  linear-gradient(#7610e2 90%, transparent 10%),
-linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%),
-linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, transparent 10%);
-
-
-    background-position:
-            10% 10%, 28% 5%, 50% 20%, 70% 40%, 80% 10%,
-            18% 43%, 30% 25%, 51% 38%, 65% 52%, 70% 43%,
-            5% 60%, 42% 53%, 53% 66%, 55% 70%, 90% 60%,
-            14% 80%, 38% 81%, 48% 70%, 58% 90%, 85% 85%,
-
-
-            10% 10%, 28% 5%, 50% 20%, 70% 40%, 80% 10%,
-            18% 43%, 30% 25%, 51% 38%, 65% 52%, 70% 43%,
-            5% 60%, 42% 53%, 53% 66%, 55% 70%, 90% 60%,
-            14% 80%, 38% 81%, 48% 70%, 58% 90%, 85% 85%,
-
-            10% 110%, 28% 15%, 50% 120%, 70% 140%, 80% 110%,
-            18% 143%, 30% 125%, 51% 138%, 65% 152%, 70% 143%,
-            5% 160%, 42% 153%, 53% 166%, 55% 170%, 90% 160%,
-            14% 180%, 38% 181%, 48% 170%, 58% 190%, 85% 185%
-   ;
-    background-size:
-            0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,
-            0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,
-            0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,
-            0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,
-
-            0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,
-            0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,
-            0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,
-            0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,
-
-            0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,
-            0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,
-            0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,
-            0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%,0.5% 5%
-;
 
     background-repeat: no-repeat;
-    /*animation: rain 2s infinite;*/
 }
 
 
-
-
-.rating{
+.rating {
     direction: rtl;
 }
+
 .rating button {
     border: none;
     background-color: transparent;
@@ -227,10 +102,11 @@ linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, tran
 
 .rating button:hover,
 .rating button:focus,
-.rating button:hover ~  button,
-.rating button:focus ~  button {
+.rating button:hover ~ button,
+.rating button:focus ~ button {
     color: red;
 }
+
 /*.wrapper{
     background-color: #00008b;
 }*/
@@ -255,31 +131,32 @@ linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, tran
 }
 
 
-.click-button{
+.click-button {
     margin: 4px;
     padding: 2.5rem;
-    border: 4px transparent solid ;
-    border-radius: 2.5rem ;
+    border: 4px transparent solid;
+    border-radius: 2.5rem;
     font-size: 2.5rem;
     background-color: #a5c499;
     cursor: pointer;
     transition: background 0.6s, color 0.3s;
 }
-.click-button:focus{
-    border: 4px darkgreen solid ;
+
+.click-button:focus {
+    border: 4px darkgreen solid;
     color: #4eaa4f;
     background-color: #222a11;
 }
-.click-button:hover{
+
+.click-button:hover {
     background-color: #596f0f;
     transition: background 0.3s
 }
-.click-button:active{
+
+.click-button:active {
     background-color: #222a11;
     color: #f30000;
 }
-
-
 
 
 @keyframes loaderX {
@@ -300,7 +177,7 @@ linear-gradient(#7610e2 90%, transparent 10%), linear-gradient(#7610e2 90%, tran
 
 @keyframes rain {
     0% {
-        transform:  translateY(-750px);
+        transform: translateY(-750px);
 
     }
     100% {

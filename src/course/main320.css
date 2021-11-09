@@ -1,23 +1,19 @@
-
 .mainContent {
+    width: 100vw;
     display: flex;
-    flex-wrap: wrap;
-}
+    flex-wrap: wrap;}
 
 .product {
     position: relative;
-    height: 300px;
-    width: 300px;
-    padding: 1px;
-
-
+    height:49vw;
+    width: 49vw;
+    background-color: rgba(205, 31, 31, 0.2);
 }
 
 .product a {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.2);
     height: 100%;
     width: 100%;
 }
@@ -108,5 +104,6 @@
 .product:hover .buttonSt {
     display: block;
 }
+
 
 
