@@ -8,7 +8,13 @@ body{
 .headerBody{
     height: 60px;
     background-color: #000000;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
 }
+
 @media screen and (max-device-width: 320px) {
     .headerBody{
         height: 40px;
@@ -172,6 +178,8 @@ body{
 
 
 .mainBody{
+    padding-top: 60px;
+
     background-image: url("./assets/images/bgimage.svg") ;
     background-repeat: no-repeat;
 }
