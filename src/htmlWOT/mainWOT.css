@@ -27,7 +27,7 @@
     left: 0;
     margin: 10px;
 }
-.buttonSt{
+.description_button{
     display: none;
     position: relative;
     bottom: 0;
@@ -40,6 +40,6 @@
 .block:hover .imgBG{
     opacity: 0.5;
 }
-.block:hover .buttonSt{
+.block:hover .description_button{
     display: block;
 }

@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="html.css" media="screen and (min-device-width: 321px)" rel="stylesheet">
+    <link href="html.css"  rel="stylesheet">
+    <link href="main.css"  rel="stylesheet">
+    <!--<link href="html.css" media="screen and (min-device-width: 321px)" rel="stylesheet">
     <link href="main.css"  media="screen and (min-device-width: 321px)" rel="stylesheet">
     <link href="html320.css"  media="screen and (max-device-width: 320px)" rel="stylesheet">
-    <link href="main320.css" media="screen and (max-device-width: 320px)"  rel="stylesheet">
+    <link href="main320.css" media="screen and (max-device-width: 320px)"  rel="stylesheet">-->
     <link href="heart.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon"
           href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX4w-lsMBPNGq-dIqjliDK8isBdqYpiyWvfQ&usqp=CAU"/>
+    <script defer src="addWishlist.js"></script>
+
     <title>PREMIUM SHOP</title>
 </head>
-<body>
+<body id="bodyId">
 <header class="headerBody">
     <div class="headerContainer" >
         <div class="headerLogo">
@@ -20,7 +24,7 @@
             <h1> premium shop </h1>
         </div>
         <nav class="headerNav">
-            <a class="wishlist" href="#">(2)</a>
+            <a id="wishlistId" class="wishlist" href="#">(2)</a>
             <a class="shopping" href="#">(5)</a>
             <span class="account">
                 <a class="login" href="#">Login</a>
@@ -33,7 +37,7 @@
 <div class="mainBody">
     <div class="mainContainer">
         <div  class="mainNav">
-            <span class="logo">логотип</span>
+            <span class="mainNav_logo">логотип</span>
             <nav>
                 <a href="#">all</a>
                 <a href="#">vehicles</a>
@@ -41,175 +45,175 @@
                 <a href="#">premium account</a>
             </nav>
         </div>
-        <main class="mainContent">
-            <div class="product">
-                <a href="#"><img class="imgBG" src="./assets/img/Layer%2042.png"
+        <main class="mainContent" id="main">
+           <!-- <div class="product">
+                <a href="#"><img class="imgBG" src="./assets/images/Layer40.svg"
                                  alt="Танк"></a>
-                <button class="like heart">Поставить лайк</button>
+                <button class="like">Поставить лайк</button>
                 <div class="description">
-                    <div class="descriptionProduct">
-                        <span class="flag">СССР</span>
-                        <span class="typ">тяжёлый танк</span>
+                    <div class="description_Product">
+                        <span class="description_flag">СССР</span>
+                        <span class="description_typ">тяжёлый танк</span>
                         <h2>ИС-6</h2>
                     </div>
-                    <span class="price">$ 58.99</span>
-                    <button class="buttonSt">purchase</button>
+                    <span class="description_price">$ 58.99</span>
+                    <button class="description_button">purchase</button>
                 </div>
             </div>
             <div class="product">
-                <a href="#"><img class="imgBG" src="./assets/img/Layer%2042.png"
+                <a href="#"><img class="imgBG" src="./assets/images/Layer40.svg"
                                  alt="Танк"></a>
-                <button class="like heart">Поставить лайк</button>
+                <button class="like">Поставить лайк</button>
                 <div class="description">
-                    <div class="descriptionProduct">
-                        <span class="flag">СССР</span>
-                        <span class="typ">тяжёлый танк</span>
+                    <div class="description_Product">
+                        <span class="description_flag">СССР</span>
+                        <span class="description_typ">тяжёлый танк</span>
                         <h2>ИС-6</h2>
                     </div>
-                    <span class="price">$ 58.99</span>
-                    <button class="buttonSt">purchase</button>
+                    <span class="description_price">$ 58.99</span>
+                    <button class="description_button">purchase</button>
                 </div>
             </div>
             <div class="product">
-                <a href="#"><img class="imgBG" src="./assets/img/Layer%2042.png"
+                <a href="#"><img class="imgBG" src="./assets/images/Layer40.svg"
                                  height="250" alt="Танк"></a>
-                <button class="like heart">Поставить лайк</button>
+                <button class="like">Поставить лайк</button>
                 <div class="description">
-                    <div class="descriptionProduct">
-                        <span class="flag">СССР</span>
-                        <span class="typ">тяжёлый танк</span>
+                    <div class="description_Product">
+                        <span class="description_flag">СССР</span>
+                        <span class="description_typ">тяжёлый танк</span>
                         <h2>ИС-6</h2>
                     </div>
-                    <span class="price">$ 58.99</span>
-                    <button class="buttonSt">purchase</button>
-                </div>
-            </div>
-            <div class="product">
-                <a href="#"><img class="imgBG" src="https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png"
-                                 height="250" alt="Танк"></a>
-                <button class="like heart">Поставить лайк</button>
-                <div class="description">
-                    <div class="descriptionProduct">
-                        <span class="flag">СССР</span>
-                        <span class="typ">тяжёлый танк</span>
-                        <h2>ИС-6</h2>
-                    </div>
-                    <span class="price">$ 58.99</span>
-                    <button class="buttonSt">purchase</button>
+                    <span class="description_price">$ 58.99</span>
+                    <button class="description_button">purchase</button>
                 </div>
             </div>
             <div class="product">
                 <a href="#"><img class="imgBG" src="https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png"
                                  height="250" alt="Танк"></a>
-                <button class="like heart">Поставить лайк</button>
+                <button class="like">Поставить лайк</button>
                 <div class="description">
-                    <div class="descriptionProduct">
-                        <span class="flag">СССР</span>
-                        <span class="typ">тяжёлый танк</span>
+                    <div class="description_Product">
+                        <span class="description_flag">СССР</span>
+                        <span class="description_typ">тяжёлый танк</span>
                         <h2>ИС-6</h2>
                     </div>
-                    <span class="price">$ 58.99</span>
-                    <button class="buttonSt">purchase</button>
+                    <span class="description_price">$ 58.99</span>
+                    <button class="description_button">purchase</button>
                 </div>
             </div>
             <div class="product">
                 <a href="#"><img class="imgBG" src="https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png"
                                  height="250" alt="Танк"></a>
-                <button class="like heart">Поставить лайк</button>
+                <button class="like">Поставить лайк</button>
                 <div class="description">
-                    <div class="descriptionProduct">
-                        <span class="flag">СССР</span>
-                        <span class="typ">тяжёлый танк</span>
+                    <div class="description_Product">
+                        <span class="description_flag">СССР</span>
+                        <span class="description_typ">тяжёлый танк</span>
                         <h2>ИС-6</h2>
                     </div>
-                    <span class="price">$ 58.99</span>
-                    <button class="buttonSt">purchase</button>
+                    <span class="description_price">$ 58.99</span>
+                    <button class="description_button">purchase</button>
                 </div>
             </div>
             <div class="product">
                 <a href="#"><img class="imgBG" src="https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png"
                                  height="250" alt="Танк"></a>
-                <button class="like heart">Поставить лайк</button>
+                <button class="like">Поставить лайк</button>
                 <div class="description">
-                    <div class="descriptionProduct">
-                        <span class="flag">СССР</span>
-                        <span class="typ">тяжёлый танк</span>
+                    <div class="description_Product">
+                        <span class="description_flag">СССР</span>
+                        <span class="description_typ">тяжёлый танк</span>
                         <h2>ИС-6</h2>
                     </div>
-                    <span class="price">$ 58.99</span>
-                    <button class="buttonSt">purchase</button>
+                    <span class="description_price">$ 58.99</span>
+                    <button class="description_button">purchase</button>
                 </div>
             </div>
             <div class="product">
                 <a href="#"><img class="imgBG" src="https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png"
                                  height="250" alt="Танк"></a>
-                <button class="like heart">Поставить лайк</button>
+                <button class="like">Поставить лайк</button>
                 <div class="description">
-                    <div class="descriptionProduct">
-                        <span class="flag">СССР</span>
-                        <span class="typ">тяжёлый танк</span>
+                    <div class="description_Product">
+                        <span class="description_flag">СССР</span>
+                        <span class="description_typ">тяжёлый танк</span>
                         <h2>ИС-6</h2>
                     </div>
-                    <span class="price">$ 58.99</span>
-                    <button class="buttonSt">purchase</button>
+                    <span class="description_price">$ 58.99</span>
+                    <button class="description_button">purchase</button>
+                </div>
+            </div>
+            <div class="product">
+                <a href="#"><img class="imgBG" src="https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png"
+                                 height="250" alt="Танк"></a>
+                <button class="like">Поставить лайк</button>
+                <div class="description">
+                    <div class="description_Product">
+                        <span class="description_flag">СССР</span>
+                        <span class="description_typ">тяжёлый танк</span>
+                        <h2>ИС-6</h2>
+                    </div>
+                    <span class="description_price">$ 58.99</span>
+                    <button class="description_button">purchase</button>
                 </div>
             </div>
             <div class="product">
                 <a href="#"><img class="imgBG" src="https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png"
                                   alt="Танк"></a>
-                <button class="like heart">Поставить лайк</button>
+                <button class="like">Поставить лайк</button>
                 <div class="description">
-                    <div class="descriptionProduct">
-                        <span class="flag">СССР</span>
-                        <span class="typ">тяжёлый танк</span>
+                    <div class="description_Product">
+                        <span class="description_flag">СССР</span>
+                        <span class="description_typ">тяжёлый танк</span>
                         <h2>ИС-6</h2>
                     </div>
-                    <span class="price">$ 58.99</span>
-                    <button class="buttonSt">purchase</button>
+                    <span class="description_price">$ 58.99</span>
+                    <button class="description_button">purchase</button>
                 </div>
             </div>
             <div class="product">
                 <a href="#"><img class="imgBG" src="https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png"
                                  height="250" alt="Танк"></a>
-                <button class="like heart">Поставить лайк</button>
+                <button class="like">Поставить лайк</button>
                 <div class="description">
-                    <div class="descriptionProduct">
-                        <span class="flag">СССР</span>
-                        <span class="typ">тяжёлый танк</span>
+                    <div class="description_Product">
+                        <span class="description_flag">СССР</span>
+                        <span class="description_typ">тяжёлый танк</span>
                         <h2>ИС-6</h2>
                     </div>
-                    <span class="price">$ 58.99</span>
-                    <button class="buttonSt">purchase</button>
+                    <span class="description_price">$ 58.99</span>
+                    <button class="description_button">purchase</button>
                 </div>
             </div>
             <div class="product">
                 <a href="#"><img class="imgBG" src="https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png"
                                  height="250" alt="Танк"></a>
-                <button class="like heart">Поставить лайк</button>
+                <button class="like">Поставить лайк</button>
                 <div class="description">
-                    <div class="descriptionProduct">
-                        <span class="flag">СССР</span>
-                        <span class="typ">тяжёлый танк</span>
+                    <div class="description_Product">
+                        <span class="description_flag">СССР</span>
+                        <span class="description_typ">тяжёлый танк</span>
                         <h2>ИС-6</h2>
                     </div>
-                    <span class="price">$ 58.99</span>
-                    <button class="buttonSt">purchase</button>
+                    <span class="description_price">$ 58.99</span>
+                    <button class="description_button">purchase</button>
                 </div>
             </div>
             <div class="product">
                 <a href="#"><img class="imgBG" src="https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png"
                                  height="250" alt="Танк"></a>
-                <button class="like heart">Поставить лайк</button>
+                <button class="like">Поставить лайк</button>
                 <div class="description">
-                    <div class="descriptionProduct">
-                        <span class="flag">СССР</span>
-                        <span class="typ">тяжёлый танк</span>
+                    <div class="description_Product">
+                        <span class="description_flag">СССР</span>
+                        <span class="description_typ">тяжёлый танк</span>
                         <h2>ИС-6</h2>
                     </div>
-                    <span class="price">$ 58.99</span>
-                    <button class="buttonSt">purchase</button>
+                    <span class="description_price">$ 58.99</span>
+                    <button class="description_button">purchase</button>
                 </div>
-            </div>
+            </div>-->
         </main>
     </div>
 
