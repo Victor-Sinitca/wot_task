@@ -1,0 +1,71 @@
+@import "variable";
+
+.mainBody {
+  padding-top: $headerHeight;
+  background-image: url("../assets/images/bgimage.svg");
+  background-repeat: no-repeat;
+  @media screen and (max-device-width: 320px) {
+    padding-top: $headerHeightAdapt;
+  }
+}
+
+.mainContainer {
+  .mainNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 30px;
+    @media screen and (max-device-width: 320px) {
+      height: auto;
+      margin: 0 15px;
+    }
+
+    .mainNav_logo {
+      height: 98px;
+      width: 185px;
+      font-size: 0px;
+      background-image: url("../assets/images/logo.svg");
+      background-repeat: no-repeat;
+      @media screen and (max-device-width: 320px) {
+        height: 24px;
+        width: 19px;
+        background-image: url("../assets/images/LogoAlt.png");
+      }
+    }
+
+    nav {
+      display: flex;
+      justify-content: end;
+      a {
+        padding: 5px;
+        font-size: $fontSizeNav;
+        margin-left: 50px;
+        text-decoration: none;
+        text-transform: uppercase;
+        white-space: nowrap;
+        color: #cccccc;
+        @media screen and (max-device-width: 320px) {
+          font-size: $fontSizeNavAdapt;
+          margin-left: 0;
+        }
+        &:hover, &:focus {
+          border-bottom: 5px solid white;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

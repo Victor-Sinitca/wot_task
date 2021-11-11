@@ -208,9 +208,9 @@ function createProduct($parent, productData) {
     const $product = document.createElement("div")
     $product.classList.add('product')
     $product.innerHTML = `
-                <a href="#"><img class="imgBG" src="./assets/images/Layer40.svg"
+                <a href="#"><img class="imgBG" src="assets/images/Layer40.svg"
                                  alt="Танк"></a>
-                <button class="likeNotActive">Поставить лайк</button>
+                <button class="like likeNotActive">Поставить лайк</button>
                 <div class="description">
                     <div class="description_Product">
                         <span class="description_flag">${productData.productDescription.country}</span>

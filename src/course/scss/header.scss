@@ -1,0 +1,150 @@
+@import "variable";
+
+.headerBody {
+  height: $headerHeight;
+  background-color: $backgroundColor;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  @media screen and (max-device-width: 320px) {
+    height: $headerHeightAdapt;
+  }
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 30px;
+  @media screen and (max-device-width: 320px) {
+    height: 40px;
+    margin: 0 15px;
+  }
+}
+
+.headerLogo {
+  display: flex;
+  align-items: center;
+
+  span {
+    height: 23px;
+    width: 23px;
+    font-size: 0;
+    background-image: url('../assets/images/VectorSmartObject.svg');
+    background-repeat: no-repeat;
+  }
+
+  h1 {
+    font-size: $fontSizeHeaderH1;
+    margin-left: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: $fontColor;
+    @media screen and (max-device-width: 320px) {
+      font-size: $fontSizeHeaderH1Adapt;
+      margin-left: 4px;
+    }
+  }
+}
+
+.headerNav {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 20px;
+  align-items: center;
+  @media screen and (max-device-width: 320px) {
+    grid-gap: 5px;
+  }
+
+  .wishlist {
+    color: #ffffff;
+    font-size: $fontSizeHeader;
+    text-decoration: none;
+
+    &::before {
+      content: "Wishlist ";
+      padding-right: 5px;
+      padding-left: 5px;
+      color: $fontColor;
+      @media screen and (max-device-width: 320px) {
+        display: none;
+      }
+    }
+
+    @media screen and (max-device-width: 320px) {
+      &::after {
+        content: "";
+        display: inline-block;
+        height: 14px;
+        width: 16px;
+        background-image: url("../assets/images/valentines-heart.png");
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  .shopping {
+    font-size: $fontSizeHeader;
+    color: #ffffff;
+    text-decoration: none;
+
+    &::before {
+      content: "Shopping cart ";
+      padding-right: 5px;
+      padding-left: 5px;
+      color: $fontColor;
+    }
+
+    @media screen and (max-device-width: 320px) {
+      &::before {
+        content: "";
+        padding-right: 5px;
+        padding-left: 5px;
+        color: $fontColor;
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        background-image: url("../assets/images/cart.png");
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  .account {
+    span {
+      color: #656565;
+      margin-left: 0;
+      @media screen and (max-device-width: 320px) {
+        display: none;
+      }
+    }
+
+    .login {
+      color: $fontColor;
+      text-decoration: none;
+      font-size: $fontSizeHeader;
+      @media screen and (max-device-width: 320px) {
+        content: "";
+        display: inline-block;
+        font-size: 0;
+        height: 17px;
+        width: 20px;
+        background-image: url("../assets/images/ico.png");
+        background-repeat: no-repeat;
+      }
+    }
+
+    .create {
+      color: $fontColor;
+      text-decoration: none;
+      font-size: $fontSizeHeader;
+      @media screen and (max-device-width: 320px) {
+        display: none;
+      }
+    }
+  }
+}
+
+
+
