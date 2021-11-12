@@ -13,7 +13,6 @@ body {
 .container {
     align-items: center;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     overflow: hidden;
     background: beige;
@@ -64,7 +63,7 @@ body {
     position: absolute;
     margin-left: -0px;
     width: 500px;
-    /*animation: loaderX 4s infinite ease-in-out;*/
+    animation: loaderX 4s infinite ease-in-out;
 }
 
 .umbrella {
