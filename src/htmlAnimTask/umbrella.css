@@ -16,7 +16,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
-   /* animation: rain 3s infinite linear ;*/
+    animation: rain 3s infinite linear ;
     background-image:
     radial-gradient(ellipse farthest-corner at 50% 100%, #dbe6ff 20%, #a2bbfc 68%, #366dff 70%, transparent 70%),
     radial-gradient(ellipse farthest-corner at 50% 50%, #dbe6ff 20%, #a2bbfc 68%, #366dff 70%, transparent 70%),
@@ -180,19 +180,30 @@
     height: 50%;
     width: 100%;
 
-    /*animation: move 4s infinite ease-in-out;*/
+    animation: move 4s infinite ease-in-out;
 
     background-image:
+
         /*зонт*/
-    radial-gradient(ellipse farthest-corner at 200% 120%, #976df6 20%, #8d65d9 68%, #382370 70%, transparent 70%),
-    radial-gradient(ellipse farthest-corner at -100% 120%, #976df6 20%, #8d65d9 68%, #382370 70%, transparent 70%),
-    radial-gradient(ellipse farthest-corner at 200% 120%, #5226be 20%, #8d65d9 68%, #382370 70%, transparent 70%),
-    radial-gradient(ellipse farthest-corner at -100% 120%, #5226be 20%, #8d65d9 68%, #382370 70%, transparent 70%),
-    radial-gradient(ellipse farthest-corner at 200% 120%, #5226be 20%, #8d65d9 68%, #382370 70%, transparent 70%),
-    radial-gradient(ellipse farthest-corner at -100% 120%, #5226be 20%, #8d65d9 68%, #382370 70%, transparent 70%),
+/*3gr*/radial-gradient(ellipse farthest-corner at 200% 100%,transparent 68.2%, #8d65d9 68.5%, #5226be 70%, transparent 70%),
+/*4gr*/radial-gradient(ellipse farthest-corner at -100% 100%,transparent 68.2%, #8d65d9 68.5%, #5226be 70%, transparent 70%),
+
+/*2gr*/radial-gradient(ellipse farthest-corner at 200% 100%,transparent 68.2%, #8d65d9 68.5%, #5226be 70%, transparent 70%),
+/*5gr*/radial-gradient(ellipse farthest-corner at -100% 100%,transparent 68.2%, #8d65d9 68.5%, #5226be 70%, transparent 70%),
+
+
+/*1gr*/radial-gradient(ellipse farthest-corner at 190% 110%,transparent 68.8%, #8d65d9 69.0%, #5226be 70%, transparent 70%),
+/*2gr*/radial-gradient(ellipse farthest-corner at -90% 110%,transparent 68.8%, #8d65d9 69.0%, #5226be 70%, transparent 70%),
+
+/*3*/radial-gradient(ellipse farthest-corner at 200% 120%, #976df6 20%, #8d65d9 68%, #8d65d9 70%, transparent 70%),
+/*4*/radial-gradient(ellipse farthest-corner at -100% 120%, #976df6 20%, #8d65d9 68%, #8d65d9 70%, transparent 70%),
+/*2*/radial-gradient(ellipse farthest-corner at 200% 120%, #5226be 20%, #8d65d9 68%, #8d65d9 70%, transparent 70%),
+/*5*/radial-gradient(ellipse farthest-corner at -100% 120%, #5226be 20%, #8d65d9 68%, #8d65d9 70%, transparent 70%),
+/*1*/radial-gradient(ellipse farthest-corner at 200% 120%, #5226be 20%, #8d65d9 68%, #8d65d9 70%, transparent 70%),
+/*2*/radial-gradient(ellipse farthest-corner at -100% 120%, #5226be 0%,#8d65d9 70%, transparent 70%),
         /* нижнее обрамление зонта*/
-    radial-gradient(ellipse farthest-side at 50% 100%, transparent 99%, #382370 100%, #8f66e2 110%),
-    radial-gradient(ellipse farthest-side at 50% 100%, transparent 99%, #382370 100%, #8f66e2 110%),
+    radial-gradient(ellipse farthest-side at 50% 90%, transparent 99%, #5226be 100%, #8f66e2 110%),
+    radial-gradient(ellipse farthest-side at 50% 100%, transparent 99%, #5226be 100%, #8f66e2 110%),
     radial-gradient(ellipse farthest-side at  50% 100%, transparent 99%, #382370 100%, #8f66e2 110%),
 
     radial-gradient(ellipse farthest-side at 50% 100%, transparent 99%, #382370 100%, #8f66e2 110%),
@@ -200,6 +211,17 @@
 
     background-position:
         /*зонт*/
+
+
+            41.2% 100%,
+            58.8% 100%,
+
+            26.5% 100%,
+            73.5% 100%,
+
+            0% 100%,
+            100% 100%,
+
     41.2% -50%,
     58.8% -50%,
     26.5% -50%,
@@ -215,6 +237,17 @@
 
     background-size:
         /*зонт*/
+
+
+            15% 100%,
+            15% 100%,
+
+            32% 100%,
+            32% 100%,
+
+            50% 100%,
+            50% 100%,
+
     15% 95%,
     15% 95%,
     32% 95%,
