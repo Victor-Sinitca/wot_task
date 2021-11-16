@@ -1,62 +1,120 @@
 @import "variable";
-.mainItemContent {
 
-  h2{
-    font-size:64pt;
-    line-height: 30pt;
-    color:$fontColorWhite ;
+.mainItemContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  align-content:start;
+  align-items: start;
+  margin-right: 15px;
+  margin-left: 15px;
+  /*align-items:start;*/
+  @media screen and (max-device-width: 320px) {
+    grid-template-columns: 1fr;
+  }
+
+  h2 {
+    display: grid;
+    font-size: 64px;
+    letter-spacing:-0.05em;
+    margin: 0 0;
+    color: $fontColorWhite;
     font-weight: normal;
     white-space: nowrap;
     text-transform: uppercase;
-    @media screen and (max-device-width: 320px ) {
-      font-size:24pt;
-    }
-  }
-  .priceItem {
-    display: block;
-    font-size: $fontSizeDescription_price;
-    color: #d1b482;
+    border-bottom: 1px solid #6b625c;
     @media screen and (max-device-width: 320px) {
-      margin-left: 0px;
-      font-size: $fontSizeDescription_priceAdapt;
+      height: 60px;
+      align-items:center;
+      font-size: 24px;
+      line-height: 1.2em;
     }
   }
 
-  .purchaseButton {
-    height: 39px;
-    width: 100px;
-   /* position: absolute;*/
-    text-transform: uppercase;
-    color: $fontColorWhite;
-    border: none;
-    font-size: $fontSizeButtonPurchase;
-    cursor: pointer;
-    background-color: $colorButtonPurchase;
-    &:hover {
-      border: 1px solid $colorBorderButtonPurchase;
-      /* box-shadow: 0px 0px 2px 2px #c44303 inset, 0px 0px 1px 1px #c44303;*/
+  img {
+    width: 100%;
+    grid-row: span 2;
+    @media screen and (max-device-width: 320px) {
+      grid-row: span 1;
     }
   }
-  p{
-    font-size:17pt;
+
+  .purchaseContainer {
+    display: flex;
+    flex-direction: column;
+
+    .priceItem {
+      font-size: $fontSizeDescription_price;
+      color: #d1b482;
+      margin-bottom: 30px;
+      margin-top: 30px;
+      @media screen and (max-device-width: 320px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        margin-bottom:0px;
+        margin-top: 0px;
+        background-color: #232323;
+        font-size: $fontSizeDescription_priceAdapt;
+      }
+    }
+    .purchaseButton {
+      height: 39px;
+      width: 100px;
+      /* position: absolute;*/
+      text-transform: uppercase;
+      color: $fontColorWhite;
+      border: none;
+      font-size: $fontSizeButtonPurchase;
+      cursor: pointer;
+      background-color: $colorButtonPurchase;
+
+      &:hover {
+        border: 1px solid $colorBorderButtonPurchase;
+        /* box-shadow: 0px 0px 2px 2px #c44303 inset, 0px 0px 1px 1px #c44303;*/
+      }
+      @media screen and (max-device-width: 320px) {
+        height: 100%;
+        width: 50%;
+      }
+    }
+    @media screen and (max-device-width: 320px) {
+      height: 60px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      flex-direction: row;
+    }
+  }
+
+  p {
+    grid-column: span 2;
+    font-size: 17px;
     color: #999999;
-    line-height: 30pt;
+    line-height: 30px;
 
 
-    &::before{
+    &::before {
       content: "Details";
-      font-size:30pt;
-      line-height: 30pt;
+      font-size: 30px;
+      padding-bottom: 14px;
+
       color: white;
       display: block;
+      margin-bottom: 40px;
       text-transform: uppercase;
-      border-bottom: white;
-      @media screen and (max-device-width: 320px ) {
-        font-size:18pt;
+      border-bottom: 1px solid #6b625c;
+      @media screen and (max-device-width: 320px) {
+        margin-bottom: 18px;
+
       }
 
     }
-
+    @media screen and (max-device-width: 320px) {
+      grid-column: span 1;
+    }
   }
 
 }

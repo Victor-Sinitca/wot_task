@@ -7,6 +7,9 @@
   left: 0;
   right: 0;
   z-index: 1;
+  display: flex;
+  justify-content:center;
+
   @media screen and (max-device-width: 320px) {
     height: $headerHeightAdapt;
   }
@@ -16,7 +19,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width:100%;
   margin: 0 30px;
+  max-width: 1200px;
   @media screen and (max-device-width: 320px) {
     height: 40px;
     margin: 0 15px;
