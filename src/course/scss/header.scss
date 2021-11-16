@@ -26,7 +26,7 @@
 .headerLogo {
   display: flex;
   align-items: center;
-
+  margin-right: 10px;
   span {
     height: 23px;
     width: 23px;
@@ -39,8 +39,9 @@
     font-size: $fontSizeHeaderH1;
     margin-left: 12px;
     font-weight: normal;
+    white-space: nowrap;
     text-transform: uppercase;
-    color: $fontColor;
+    color: $fontColorHeader;
     @media screen and (max-device-width: 320px) {
       font-size: $fontSizeHeaderH1Adapt;
       margin-left: 4px;
@@ -54,11 +55,11 @@
   grid-gap: 20px;
   align-items: center;
   @media screen and (max-device-width: 320px) {
-    grid-gap: 5px;
+    grid-gap: 10px;
   }
 
   .wishlist {
-    color: #ffffff;
+    color: $fontColorWhite;
     font-size: $fontSizeHeader;
     text-decoration: none;
 
@@ -66,10 +67,14 @@
       content: "Wishlist ";
       padding-right: 5px;
       padding-left: 5px;
-      color: $fontColor;
+      color: $fontColorHeader;
+
       @media screen and (max-device-width: 320px) {
         display: none;
       }
+    }
+    &:hover::before{
+      color:$fontColorHeaderActive;
     }
 
     @media screen and (max-device-width: 320px) {
@@ -78,6 +83,7 @@
         display: inline-block;
         height: 14px;
         width: 16px;
+        margin-left: 5px;
         background-image: url("../assets/images/valentines-heart.png");
         background-repeat: no-repeat;
       }
@@ -86,59 +92,66 @@
 
   .shopping {
     font-size: $fontSizeHeader;
-    color: #ffffff;
+    color: $fontColorWhite;
     text-decoration: none;
 
     &::before {
       content: "Shopping cart ";
-      padding-right: 5px;
-      padding-left: 5px;
-      color: $fontColor;
+      margin-right: 5px;
+      margin-left: 5px;
+      color: $fontColorHeader;
     }
-
+    &:hover::before{
+      color:$fontColorHeaderActive;
+    }
     @media screen and (max-device-width: 320px) {
       &::before {
+        margin-left: 0px;
         content: "";
-        padding-right: 5px;
-        padding-left: 5px;
-        color: $fontColor;
         display: inline-block;
         height: 16px;
         width: 16px;
-        background-image: url("../assets/images/cart.png");
-        background-repeat: no-repeat;
+        background: url("../assets/images/cart.png") no-repeat;
       }
     }
   }
 
   .account {
+    display: flex;
+    align-items: baseline;
     span {
       color: #656565;
-      margin-left: 0;
+      margin-left: 10px;
+      margin-right: 10px;
       @media screen and (max-device-width: 320px) {
         display: none;
       }
     }
 
     .login {
-      color: $fontColor;
+      color: $fontColorHeader;
       text-decoration: none;
       font-size: $fontSizeHeader;
+      &:hover{
+        color:$fontColorHeaderActive;
+      }
       @media screen and (max-device-width: 320px) {
         content: "";
         display: inline-block;
         font-size: 0;
         height: 17px;
         width: 20px;
-        background-image: url("../assets/images/ico.png");
-        background-repeat: no-repeat;
+        background: url("../assets/images/ico.png") no-repeat top ;
       }
     }
 
     .create {
-      color: $fontColor;
+      color: $fontColorHeader;
       text-decoration: none;
       font-size: $fontSizeHeader;
+      &:hover{
+        color:$fontColorHeaderActive;
+      }
       @media screen and (max-device-width: 320px) {
         display: none;
       }

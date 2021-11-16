@@ -8,7 +8,7 @@ const productData = [
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
-        productID:1,
+        productID: 1,
     },
     {
         productDescription: {
@@ -19,7 +19,7 @@ const productData = [
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
-        productID:2,
+        productID: 2,
     },
     {
         productDescription: {
@@ -30,7 +30,7 @@ const productData = [
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
-        productID:3,
+        productID: 3,
     },
     {
         productDescription: {
@@ -41,7 +41,7 @@ const productData = [
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
-        productID:4,
+        productID: 4,
     },
     {
         productDescription: {
@@ -52,7 +52,7 @@ const productData = [
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
-        productID:5,
+        productID: 5,
     },
     {
         productDescription: {
@@ -63,7 +63,7 @@ const productData = [
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
-        productID:6,
+        productID: 6,
     },
     {
         productDescription: {
@@ -74,7 +74,7 @@ const productData = [
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
-        productID:7,
+        productID: 7,
     },
     {
         productDescription: {
@@ -85,7 +85,7 @@ const productData = [
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
-        productID:8,
+        productID: 8,
     }
     ,
     {
@@ -97,7 +97,7 @@ const productData = [
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
-        productID:9,
+        productID: 9,
     }
     ,
     {
@@ -109,7 +109,7 @@ const productData = [
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
-        productID:10,
+        productID: 10,
     }
     ,
     {
@@ -121,7 +121,7 @@ const productData = [
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
-        productID:11,
+        productID: 11,
     }
     ,
     {
@@ -133,7 +133,7 @@ const productData = [
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
-        productID:12,
+        productID: 12,
     }
     ,
     {
@@ -145,26 +145,27 @@ const productData = [
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
-        productID:13,
+        productID: 13,
     }
 ]
-const userDate={
-    wishlist:[],
-    shopping:[],
+const userDate = {
+    wishlist: [],
+    shopping: [],
 }
 
 function wishlistInitial() {
-    const $wishlist=document.getElementById("wishlistId")
-    $wishlist.innerText=`(${userDate.wishlist.length})`
+    const $wishlist = document.getElementById("wishlistId")
+    $wishlist.innerText = `(${userDate.wishlist.length})`
 }
+
 wishlistInitial()
+
 function shoppingInitial() {
-    const $shopping=document.getElementById("shoppingId")
-    $shopping.innerText=`(${userDate.shopping.length})`
+    const $shopping = document.getElementById("shoppingId")
+    $shopping.innerText = `(${userDate.shopping.length})`
 }
+
 shoppingInitial()
-
-
 
 
 function moveProduct($product,) {
@@ -180,7 +181,17 @@ function moveProduct($product,) {
     console.log($moveProduct)
     const $body = document.getElementById("bodyId")
 
-   /* $moveProduct.addEventListener("mouseover", () => {
+    /* $moveProduct.addEventListener("mouseover", () => {
+         $moveProduct.style.transform = `translate3d(${left + width / 2 - productLayout.width / 2 - productLayout.left}px, ${top + height / 2 - productLayout.height / 2 - productLayout.top}px, 0px)
+          scale3d(0.1,0.1,0.1) rotate(360deg)`
+         $moveProduct.style.opacity = 0.2
+         console.log($moveProduct)
+
+         $moveProduct.addEventListener("transitionend", () => {
+             $moveProduct.remove()
+         })
+     })*/
+    setTimeout(() => {
         $moveProduct.style.transform = `translate3d(${left + width / 2 - productLayout.width / 2 - productLayout.left}px, ${top + height / 2 - productLayout.height / 2 - productLayout.top}px, 0px)
          scale3d(0.1,0.1,0.1) rotate(360deg)`
         $moveProduct.style.opacity = 0.2
@@ -189,67 +200,66 @@ function moveProduct($product,) {
         $moveProduct.addEventListener("transitionend", () => {
             $moveProduct.remove()
         })
-    })*/
-     setTimeout(()=>{
-            $moveProduct.style.transform = `translate3d(${left + width / 2 - productLayout.width / 2 - productLayout.left}px, ${top + height / 2 - productLayout.height / 2 - productLayout.top}px, 0px)
-         scale3d(0.1,0.1,0.1) rotate(360deg)`
-            $moveProduct.style.opacity=0.2
-            console.log($moveProduct)
 
-            $moveProduct.addEventListener("transitionend",()=>{
-                $moveProduct.remove()
-            })
-
-        })
+    })
     $body.append($moveProduct)
 
 }
+
 function createProduct($parent, productData) {
     const $product = document.createElement("div")
     $product.classList.add('product')
-    $product.innerHTML = `
-                <a href="#"><img class="imgBG" src="assets/images/Layer40.svg"
-                                 alt="Танк"></a>
-                <button class="like likeNotActive">Поставить лайк</button>
-                <div class="description">
-                    <div class="description_Product">
-                        <span class="description_flag">${productData.productDescription.country}</span>
-                        <span class="description_typ">${productData.productDescription.type}</span>
-                        <h2>${productData.productDescription.name}</h2>
-                    </div>
-                    <span class="description_price">$ 58.99</span>
-                    <button id="wishButton" class="description_button">purchase</button>
-                </div> 
+    $product.innerHTML = `               
+                <a href="http://localhost:63342/wot_task/src/course/item.html">
+                    <img class="imgBG" src="assets/images/Layer40.svg" alt="Танк">
+                    <div class="description">
+                        <div class="description_Product">
+                            <span class="description_flag">${productData.productDescription.country}</span>
+                            <span class="description_typ">${productData.productDescription.type}</span>
+                            <h2>${productData.productDescription.name}</h2>
+                        </div>
+                        <span class="description_price">$ 58.99</span>                        
+                    </div> 
+                </a>                             
+                <button id="wishButton" class="description_button">purchase</button>     
+                <button class="like likeNotActive">Поставить лайк</button>                
     `
     $product.style.gridColumn = `span ${productData.productDescription.span}`;
     $product.style.paddingBottom = `${100 / productData.productDescription.span}%`;
     const $button = $product.querySelectorAll("button")
+    const $likeButton = $button[1]
+    const $purchaseButton = $button[0]
     userDate.wishlist.forEach(value => {
-        if(value.productID === productData.productID){
-            $button[0].classList.remove("likeNotActive")
-            $button[0].classList.add('likeActive')
+        if (value.productID === productData.productID) {
+            $likeButton.classList.remove("likeNotActive")
+            $likeButton.classList.add('likeActive')
         }
     })
 
-    $button[1].addEventListener("click", (event) => {
+    $purchaseButton.addEventListener("click", (event) => {
         moveProduct($product)
         userDate.shopping.push(productData)
         shoppingInitial()
     }, false)
 
-    $button[0].addEventListener("click", (event) => {
-        const filterWishlist=userDate.wishlist.filter(value => value.productID !== productData.productID)
-        if(filterWishlist.length === userDate.wishlist.length){
+    $likeButton.addEventListener("click", (event) => {
+        const filterWishlist = userDate.wishlist.filter(value => value.productID !== productData.productID)
+        if (filterWishlist.length === userDate.wishlist.length) {
             userDate.wishlist.push(productData)
-            $button[0].classList.remove("likeNotActive")
-            $button[0].classList.add('likeActive')
-        }else {
-            userDate.wishlist=filterWishlist
-            $button[0].classList.remove("likeActive")
-            $button[0].classList.add('likeNotActive')
+            $likeButton.classList.remove("likeNotActive")
+            $likeButton.classList.add('likeActive')
+        } else {
+            userDate.wishlist = filterWishlist
+            $likeButton.classList.remove("likeActive")
+            $likeButton.classList.add('likeNotActive')
         }
         wishlistInitial()
     }, false)
+
+    /*const $link = $product.querySelectorAll("a")
+    $link.addEventListener("click", (event) => {
+        createItem($parent,productData)
+    }, false)*/
     $parent.append($product)
 }
 
@@ -259,8 +269,19 @@ function addProducts() {
         createProduct($container, value)
     })
 }
-
-
+/*function createItem($parent, itemData) {
+    const $item = document.createElement("div")
+    /!*$item.classList.add('product')*!/
+    $item.innerHTML = ` 
+    <div>
+    Товар
+    
+    </div>        `
+    while ($parent.firstChild) {
+        $parent.removeChild($parent.firstChild);
+    }
+    $parent.append($item)
+}*/
 
 addProducts()
 

@@ -1,0 +1,62 @@
+@import "variable";
+.mainItemContent {
+
+  h2{
+    font-size:64pt;
+    line-height: 30pt;
+    color:$fontColorWhite ;
+    font-weight: normal;
+    white-space: nowrap;
+    text-transform: uppercase;
+    @media screen and (max-device-width: 320px ) {
+      font-size:24pt;
+    }
+  }
+  .priceItem {
+    display: block;
+    font-size: $fontSizeDescription_price;
+    color: #d1b482;
+    @media screen and (max-device-width: 320px) {
+      margin-left: 0px;
+      font-size: $fontSizeDescription_priceAdapt;
+    }
+  }
+
+  .purchaseButton {
+    height: 39px;
+    width: 100px;
+   /* position: absolute;*/
+    text-transform: uppercase;
+    color: $fontColorWhite;
+    border: none;
+    font-size: $fontSizeButtonPurchase;
+    cursor: pointer;
+    background-color: $colorButtonPurchase;
+    &:hover {
+      border: 1px solid $colorBorderButtonPurchase;
+      /* box-shadow: 0px 0px 2px 2px #c44303 inset, 0px 0px 1px 1px #c44303;*/
+    }
+  }
+  p{
+    font-size:17pt;
+    color: #999999;
+    line-height: 30pt;
+
+
+    &::before{
+      content: "Details";
+      font-size:30pt;
+      line-height: 30pt;
+      color: white;
+      display: block;
+      text-transform: uppercase;
+      border-bottom: white;
+      @media screen and (max-device-width: 320px ) {
+        font-size:18pt;
+      }
+
+    }
+
+  }
+
+}
