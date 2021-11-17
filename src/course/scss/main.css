@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
 }
-@media screen and (max-device-width: 320px) {
+@media screen and (max-device-width: 425px) {
   .headerBody {
     height: 40px;
   }
@@ -21,11 +21,13 @@
   width: 100%;
   margin: 0 30px;
   max-width: 1200px;
+  min-width: 680px;
 }
-@media screen and (max-device-width: 320px) {
+@media screen and (max-device-width: 425px) {
   .headerContainer {
     height: 40px;
     margin: 0 15px;
+    min-width: auto;
   }
 }
 
@@ -49,7 +51,7 @@
   text-transform: uppercase;
   color: #919191;
 }
-@media screen and (max-device-width: 320px) {
+@media screen and (max-device-width: 425px) {
   .headerLogo h1 {
     font-size: 12px;
     margin-left: 4px;
@@ -62,7 +64,7 @@
   grid-gap: 20px;
   align-items: end;
 }
-@media screen and (max-device-width: 320px) {
+@media screen and (max-device-width: 425px) {
   .headerNav {
     grid-gap: 10px;
   }
@@ -80,7 +82,7 @@
   padding-left: 5px;
   color: #919191;
 }
-@media screen and (max-device-width: 320px) {
+@media screen and (max-device-width: 425px) {
   .headerNav .wishlist::before {
     display: none;
   }
@@ -88,7 +90,7 @@
 .headerNav .wishlist:hover::before {
   color: #cccccc;
 }
-@media screen and (max-device-width: 320px) {
+@media screen and (max-device-width: 425px) {
   .headerNav .wishlist::after {
     content: "";
     display: inline-block;
@@ -115,7 +117,7 @@
 .headerNav .shopping:hover::before {
   color: #cccccc;
 }
-@media screen and (max-device-width: 320px) {
+@media screen and (max-device-width: 425px) {
   .headerNav .shopping::before {
     margin-left: 0px;
     content: "";
@@ -134,7 +136,7 @@
   margin-left: 10px;
   margin-right: 10px;
 }
-@media screen and (max-device-width: 320px) {
+@media screen and (max-device-width: 425px) {
   .headerNav .account span {
     display: none;
   }
@@ -147,7 +149,7 @@
 .headerNav .account .login:hover {
   color: #cccccc;
 }
-@media screen and (max-device-width: 320px) {
+@media screen and (max-device-width: 425px) {
   .headerNav .account .login {
     content: "";
     display: inline-block;
@@ -165,7 +167,7 @@
 .headerNav .account .create:hover {
   color: #cccccc;
 }
-@media screen and (max-device-width: 320px) {
+@media screen and (max-device-width: 425px) {
   .headerNav .account .create {
     display: none;
   }
@@ -175,7 +177,7 @@
   padding-top: 60px;
   background: url("../assets/images/bgimage.svg") no-repeat #1c1b15;
 }
-@media screen and (max-device-width: 320px) {
+@media screen and (max-device-width: 425px) {
   .mainBody {
     padding-top: 40px;
     background: #232323;
@@ -184,6 +186,7 @@
 
 .mainContainer {
   max-width: 1260px;
+  min-width: 740px;
   margin: 0 auto;
 }
 .mainContainer .mainNav {
@@ -195,7 +198,7 @@
   margin-right: 30px;
   margin-left: 15px;*/
 }
-@media screen and (max-device-width: 320px) {
+@media screen and (max-device-width: 425px) {
   .mainContainer .mainNav {
     height: auto;
     margin: 10px 15px 0px 15px;
@@ -209,7 +212,7 @@
   font-size: 0px;
   background: url("../assets/images/logo.svg") no-repeat;
 }
-@media screen and (max-device-width: 320px) {
+@media screen and (max-device-width: 425px) {
   .mainContainer .mainNav .mainNav_logo {
     height: 24px;
     width: 30px;
@@ -238,15 +241,20 @@
   border-bottom: 5px solid #ffffff;
   color: #ffffff;
 }
-@media screen and (max-device-width: 320px) {
+@media screen and (max-device-width: 425px) {
   .mainContainer .mainNav nav a {
     font-size: 15px;
     margin-left: 20px;
   }
 }
-@media screen and (max-device-width: 320px) {
+@media screen and (max-device-width: 425px) {
   .mainContainer .mainNav nav {
     margin-left: -20px;
+  }
+}
+@media screen and (max-device-width: 425px) {
+  .mainContainer {
+    min-width: auto;
   }
 }
 
@@ -257,7 +265,7 @@
   grid-gap: 1px;
   margin: 0 30px;
 }
-@media screen and (max-device-width: 320px) {
+@media screen and (max-device-width: 425px) {
   .mainContent {
     grid-template-columns: 1fr 1fr;
     margin: 0 0;
@@ -315,7 +323,7 @@
   font-weight: normal;
   margin-bottom: 15px;
 }
-@media screen and (max-device-width: 320px) {
+@media screen and (max-device-width: 425px) {
   .product a .description .description_Product h2 {
     font-size: 13px;
   }
@@ -325,13 +333,13 @@
   font-size: 15px;
   color: #d1b482;
 }
-@media screen and (max-device-width: 320px) {
+@media screen and (max-device-width: 425px) {
   .product a .description .description_price {
-    margin-left: 0px;
+    margin-left: 0;
     font-size: 15px;
   }
 }
-@media screen and (max-device-width: 320px) {
+@media screen and (max-device-width: 425px) {
   .product a .description {
     margin-left: 15px;
     margin-bottom: 15px;
@@ -363,7 +371,7 @@
   font-size: 0px;
   cursor: pointer;
 }
-@media screen and (max-device-width: 320px) {
+@media screen and (max-device-width: 425px) {
   .product .like {
     transform: scale(0.7);
   }

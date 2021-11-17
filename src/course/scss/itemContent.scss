@@ -9,7 +9,7 @@
   margin-right: 15px;
   margin-left: 15px;
   /*align-items:start;*/
-  @media screen and (max-device-width: 320px) {
+  @media screen and (max-device-width: $max-device-width) {
     grid-template-columns: 1fr;
     padding-bottom: $bottomButtonHeightAdapt;
   }
@@ -25,7 +25,7 @@
     /*white-space: nowrap;*/
     text-transform: uppercase;
     border-bottom: 1px solid #6b625c;
-    @media screen and (max-device-width: 320px) {
+    @media screen and (max-device-width: $max-device-width) {
       align-items: center;
       font-size: $fontSizeNameItemAdapt;
       line-height:$fontSizeNameItemAdapt*2;
@@ -35,7 +35,7 @@
   img {
     width: 100%;
     grid-row: span 2;
-    @media screen and (max-device-width: 320px) {
+    @media screen and (max-device-width: $max-device-width) {
       grid-row: span 1;
     }
   }
@@ -51,7 +51,7 @@
       height: 90px;
       font-size: $fontSizePriceItem;
       color: #d1b482;
-      @media screen and (max-device-width: 320px) {
+      @media screen and (max-device-width: $max-device-width) {
         height: auto;
         justify-content: center;
         width: 50%;
@@ -78,13 +78,13 @@
         box-shadow: 0px 0px 2px 2px #c44303 inset, 0px 0px 1px 1px #c44303;
       }
 
-      @media screen and (max-device-width: 320px) {
+      @media screen and (max-device-width: $max-device-width) {
         height: 100%;
         width: 50%;
       }
     }
 
-    @media screen and (max-device-width: 320px) {
+    @media screen and (max-device-width: $max-device-width) {
       flex-direction: row;
       height: $bottomButtonHeightAdapt;
       width: 100%;
@@ -110,14 +110,14 @@
       margin-bottom: 40px;
       text-transform: uppercase;
       border-bottom: 1px solid #6b625c;
-      @media screen and (max-device-width: 320px) {
+      @media screen and (max-device-width: $max-device-width) {
         margin-bottom: 18px;
 
       }
 
     }
 
-    @media screen and (max-device-width: 320px) {
+    @media screen and (max-device-width: $max-device-width) {
       grid-column: span 1;
     }
   }

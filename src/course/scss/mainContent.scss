@@ -6,7 +6,7 @@
   grid-auto-flow: dense;
   grid-gap: 1px;
   margin: 0 30px;
-  @media screen and (max-device-width: 320px) {
+  @media screen and (max-device-width: $max-device-width) {
     grid-template-columns: 1fr 1fr;
     margin: 0 0;
   }
@@ -65,7 +65,7 @@
           color: $fontColorDescription_Product;
           font-weight: normal;
           margin-bottom: 15px;
-          @media screen and (max-device-width: 320px) {
+          @media screen and (max-device-width: $max-device-width) {
             font-size: $fontSizeDescription_ProductAdapt;
           }
         }
@@ -75,13 +75,13 @@
         display: block;
         font-size: $fontSizeDescription_price;
         color: #d1b482;
-        @media screen and (max-device-width: 320px) {
-          margin-left: 0px;
+        @media screen and (max-device-width: $max-device-width) {
+          margin-left: 0;
           font-size: $fontSizeDescription_priceAdapt;
         }
       }
 
-      @media screen and (max-device-width: 320px) {
+      @media screen and (max-device-width: $max-device-width) {
         margin-left: 15px;
         margin-bottom: 15px;
       }
@@ -115,7 +115,7 @@
     border: none;
     font-size: 0px;
     cursor: pointer;
-    @media screen and (max-device-width: 320px) {
+    @media screen and (max-device-width: $max-device-width) {
       transform: scale(0.7);
     }
 
