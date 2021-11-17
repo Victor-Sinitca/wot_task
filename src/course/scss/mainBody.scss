@@ -1,4 +1,4 @@
-@import "variable";
+@import "variableMain";
 
 .mainBody {
   padding-top: $headerHeight;
@@ -55,15 +55,15 @@
         white-space: nowrap;
         color: $fontColorNavLink;
         border-bottom: 5px solid transparent;
-        @media screen and (max-device-width: 320px) {
-          font-size: $fontSizeNavAdapt;
-          margin-left: 20px;
-        }
+        transition: border-bottom 1.1s;
         &:hover, &:focus {
           border-bottom: 5px solid $fontColorWhite;
           color: $fontColorWhite;
         }
-
+        @media screen and (max-device-width: 320px) {
+          font-size: $fontSizeNavAdapt;
+          margin-left: 20px;
+        }
       }
       @media screen and (max-device-width: 320px) {
         margin-left: -20px;

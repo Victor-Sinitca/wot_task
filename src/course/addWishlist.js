@@ -3,8 +3,8 @@ const productData = [
         productDescription: {
             span: "1",
             name: "ИС-64",
-            type: "",
-            country: "",
+            type: "танк",
+            country: "СССР",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -178,24 +178,14 @@ function moveProduct($product,) {
     $moveProduct.style.height = `${productLayout.height}px`
     $moveProduct.style.top = `${productLayout.top}px`
     $moveProduct.style.left = `${productLayout.left}px`
-    console.log($moveProduct)
+    /*console.log($moveProduct)*/
     const $body = document.getElementById("bodyId")
 
-    /* $moveProduct.addEventListener("mouseover", () => {
-         $moveProduct.style.transform = `translate3d(${left + width / 2 - productLayout.width / 2 - productLayout.left}px, ${top + height / 2 - productLayout.height / 2 - productLayout.top}px, 0px)
-          scale3d(0.1,0.1,0.1) rotate(360deg)`
-         $moveProduct.style.opacity = 0.2
-         console.log($moveProduct)
-
-         $moveProduct.addEventListener("transitionend", () => {
-             $moveProduct.remove()
-         })
-     })*/
     setTimeout(() => {
         $moveProduct.style.transform = `translate3d(${left + width / 2 - productLayout.width / 2 - productLayout.left}px, ${top + height / 2 - productLayout.height / 2 - productLayout.top}px, 0px)
          scale3d(0.1,0.1,0.1) rotate(360deg)`
         $moveProduct.style.opacity = 0.2
-        console.log($moveProduct)
+        /*console.log($moveProduct)*/
 
         $moveProduct.addEventListener("transitionend", () => {
             $moveProduct.remove()
@@ -269,20 +259,6 @@ function addProducts() {
         createProduct($container, value)
     })
 }
-/*function createItem($parent, itemData) {
-    const $item = document.createElement("div")
-    /!*$item.classList.add('product')*!/
-    $item.innerHTML = ` 
-    <div>
-    Товар
-    
-    </div>        `
-    while ($parent.firstChild) {
-        $parent.removeChild($parent.firstChild);
-    }
-    $parent.append($item)
-}*/
-
 addProducts()
 
 

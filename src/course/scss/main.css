@@ -60,7 +60,7 @@
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 20px;
-  align-items: center;
+  align-items: end;
 }
 @media screen and (max-device-width: 320px) {
   .headerNav {
@@ -68,6 +68,8 @@
   }
 }
 .headerNav .wishlist {
+  display: flex;
+  align-items: center;
   color: #ffffff;
   font-size: 15px;
   text-decoration: none;
@@ -98,6 +100,8 @@
   }
 }
 .headerNav .shopping {
+  display: flex;
+  align-items: center;
   font-size: 15px;
   color: #ffffff;
   text-decoration: none;
@@ -228,16 +232,17 @@
   white-space: nowrap;
   color: #cccccc;
   border-bottom: 5px solid transparent;
+  transition: border-bottom 1.1s;
+}
+.mainContainer .mainNav nav a:hover, .mainContainer .mainNav nav a:focus {
+  border-bottom: 5px solid #ffffff;
+  color: #ffffff;
 }
 @media screen and (max-device-width: 320px) {
   .mainContainer .mainNav nav a {
     font-size: 15px;
     margin-left: 20px;
   }
-}
-.mainContainer .mainNav nav a:hover, .mainContainer .mainNav nav a:focus {
-  border-bottom: 5px solid #ffffff;
-  color: #ffffff;
 }
 @media screen and (max-device-width: 320px) {
   .mainContainer .mainNav nav {
@@ -347,7 +352,6 @@
 }
 .product .description_button:hover {
   border: 1px solid #421e0e;
-  /* box-shadow: 0px 0px 2px 2px #c44303 inset, 0px 0px 1px 1px #c44303;*/
 }
 .product .like {
   position: absolute;
@@ -435,129 +439,6 @@
   opacity: 1;
 }
 
-.mainItemContent {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto auto;
-  align-content: start;
-  align-items: start;
-  margin-right: 15px;
-  margin-left: 15px;
-  /*align-items:start;*/
-}
-@media screen and (max-device-width: 320px) {
-  .mainItemContent {
-    grid-template-columns: 1fr;
-  }
-}
-.mainItemContent h2 {
-  display: grid;
-  font-size: 64px;
-  letter-spacing: -0.05em;
-  margin: 0 0;
-  color: #ffffff;
-  font-weight: normal;
-  white-space: nowrap;
-  text-transform: uppercase;
-  border-bottom: 1px solid #6b625c;
-}
-@media screen and (max-device-width: 320px) {
-  .mainItemContent h2 {
-    height: 60px;
-    align-items: center;
-    font-size: 24px;
-    line-height: 1.2em;
-  }
-}
-.mainItemContent img {
-  width: 100%;
-  grid-row: span 2;
-}
-@media screen and (max-device-width: 320px) {
-  .mainItemContent img {
-    grid-row: span 1;
-  }
-}
-.mainItemContent .purchaseContainer {
-  display: flex;
-  flex-direction: column;
-}
-.mainItemContent .purchaseContainer .priceItem {
-  font-size: 15px;
-  color: #d1b482;
-  margin-bottom: 30px;
-  margin-top: 30px;
-}
-@media screen and (max-device-width: 320px) {
-  .mainItemContent .purchaseContainer .priceItem {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    background-color: #232323;
-    font-size: 15px;
-  }
-}
-.mainItemContent .purchaseContainer .purchaseButton {
-  height: 39px;
-  width: 100px;
-  /* position: absolute;*/
-  text-transform: uppercase;
-  color: #ffffff;
-  border: none;
-  font-size: 12px;
-  cursor: pointer;
-  background-color: #e95104;
-}
-.mainItemContent .purchaseContainer .purchaseButton:hover {
-  border: 1px solid #421e0e;
-  /* box-shadow: 0px 0px 2px 2px #c44303 inset, 0px 0px 1px 1px #c44303;*/
-}
-@media screen and (max-device-width: 320px) {
-  .mainItemContent .purchaseContainer .purchaseButton {
-    height: 100%;
-    width: 50%;
-  }
-}
-@media screen and (max-device-width: 320px) {
-  .mainItemContent .purchaseContainer {
-    height: 60px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    flex-direction: row;
-  }
-}
-.mainItemContent p {
-  grid-column: span 2;
-  font-size: 17px;
-  color: #999999;
-  line-height: 30px;
-}
-.mainItemContent p::before {
-  content: "Details";
-  font-size: 30px;
-  padding-bottom: 14px;
-  color: white;
-  display: block;
-  margin-bottom: 40px;
-  text-transform: uppercase;
-  border-bottom: 1px solid #6b625c;
-}
-@media screen and (max-device-width: 320px) {
-  .mainItemContent p::before {
-    margin-bottom: 18px;
-  }
-}
-@media screen and (max-device-width: 320px) {
-  .mainItemContent p {
-    grid-column: span 1;
-  }
-}
-
 body {
   background-color: #1c1b15;
   font-family: "Roboto Condensed", sans-serif;
@@ -565,4 +446,4 @@ body {
   margin: 0 auto;
 }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=main.css.map */
