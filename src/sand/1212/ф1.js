@@ -1,9 +1,3 @@
-const mayArr=Array(10)
-console.log(mayArr)
-console.log(mayArr.length)
-mayArr.push(1)
-mayArr.push(2)
-mayArr.push(3)
-mayArr.push(4)
-console.log(mayArr)
-console.log(mayArr.length)
+/* global BigInt */
+
+console.log(BigInt(0) > -1 )
