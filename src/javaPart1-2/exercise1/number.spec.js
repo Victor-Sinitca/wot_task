@@ -209,6 +209,10 @@ describe("func3", ()=> {
         const exp=[]
         expect(range(1,3,0)).toEqual(exp)
     })
+    it('231', () => {
+        const exp=[]
+        expect(range(1,3,0)).toEqual(exp)
+    })
     it('24', () => {
         const exp=[]
         expect(range(range(1,3,1))).toEqual(exp)
