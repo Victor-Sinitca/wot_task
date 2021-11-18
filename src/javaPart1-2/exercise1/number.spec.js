@@ -25,7 +25,10 @@ describe("func1", ()=>{
         const exp=[]
         expect(range()).toEqual(exp)
     })
-
+    it('6', () => {
+        const exp=[5]
+        expect(range2(5,5,1)).toEqual(exp)
+    })
     })
 
 
