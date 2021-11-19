@@ -9,93 +9,88 @@ function errorPointerInEndList(pointer) {
     if (pointer.next === null) throw new Error(errorMessage)
 }
 
+function errorPointerOutsideList(pointer) {
+    if (!pointer) throw new Error(errorMessage)
+}
+
 function isPositionValid(position) {
     return (typeof +position === "number" && !isNaN(+position) && position != null && !Array.isArray(position) && +position >= 0)
 }
 
 function setPointer(position, pointer) {
     while (position - 1) {
-        pointer = pointer?.next
-        if (!pointer) throw new Error(errorMessage)
+        if (!pointer) break
+        pointer = pointer.next
         position--
     }
     return pointer
 }
 
 class LinkedList {
-    head = null;
-    tail = null;
-
-    //добавил конструктор для инициализации списка
-    /*constructor(...data) {
+    _head = null;
+    _tail = null;
+    //добавил конструктор для возможности инициализации списка
+    constructor(...data) {
         if (data) {
             data.forEach(value => {
                 this.add(value)
             })
         }
-    }*/
+    }
 
     add(...date) {
-        if (date.length === 0) throw new Error(errorMessage)
+        if (date.length === 0) throw new Error("Нет значения для добавления")
         // если нет позиции для вставки
         if (date.length === 1) {
             //если список не пустой
-            if (this.tail) {
-                this.tail.next = {
+            if (this._tail) {
+                this._tail.next = {
                     value: date[0],
                     next: null,
                 }
-                this.tail = this.tail.next
-
+                this._tail = this._tail.next
             } else {
                 // если список был пустой
-                this.tail = {
+                this._tail = {
                     value: date[0],
                     next: null,
                 }
-                this.head = this.tail
+                this._head = this._tail
             }
+            // если есть позиция для вставки
         } else if (date.length === 2) {
             let position = +date[1]
             // проверка на валидность значения позиции вставки
             if (isPositionValid(date[1])) {
-                let pointer = this.head
+                let pointer = this._head
                 if (position) {
                     // нахождение указателя на элемент перед позицией вставки
                     pointer = setPointer(position, pointer)
-                    /* while (position - 1) {
-                         pointer = pointer.next
-                         position--
-                     }*/
-                    if (!pointer) throw new Error(errorMessage)
+                    errorPointerOutsideList(pointer)
                     pointer.next = {
                         value: date[0],
                         next: pointer.next,
                     }
-
                 } else {
                     //если позиция вставки 0 (head)
-                    this.head = {
+                    this._head = {
                         value: date[0],
                         next: pointer,
                     }
                 }
             } else throw new Error(errorMessage)
-        } else throw new Error(errorMessage)
+            // если передано более двух аргументов
+        } else throw new Error("Передано более двух аргументов")
     }
 
     get(position) {
         if (isPositionValid(position)) {
             position = +position
-            let pointer = this.head
+            let pointer = this._head
             if (position) {
                 // нахождение указателя на элемент перед позицией возврата
-                /*pointer = setPointer(position, pointer)*/
-                while (position - 1) {
-                    pointer = pointer.next
-                    position--
-                }
-                if (!pointer) throw new Error(errorMessage)
+                pointer = setPointer(position, pointer)
+                errorPointerOutsideList(pointer)
                 errorPointerInEndList(pointer)
                 return {
                     value: pointer.next.value,
@@ -112,18 +107,14 @@ class LinkedList {
     }
 
     remove(position) {
-        errorEmptyList(this.head)
+        errorEmptyList(this._head)
         if (isPositionValid(position)) {
             position = +position
-            let pointer = this.head
+            let pointer = this._head
             if (position) {
                 // нахождение указателя на элемент перед позицией удаления
-                /* pointer = setPointer(position, pointer)*/
-                while (position - 1) {
-                    pointer = pointer.next
-                    position--
-                }
-                if (!pointer) throw new Error(errorMessage)
+                pointer = setPointer(position, pointer)
+                errorPointerOutsideList(pointer)
                 errorPointerInEndList(pointer)
                 if (pointer.next.next) {
                     //удаление среднего элемента
@@ -131,24 +122,24 @@ class LinkedList {
                 } else {
                     //удаление последнего элемента
                     pointer.next = null
-                    this.tail = pointer
+                    this._tail = pointer
                 }
             } else {
                 //удаление первого элемента
-                this.head = this.head.next
-                if (this.head === null) this.tail = null
+                this._head = this._head.next
+                if (!this._head) this._tail = null
             }
         } else throw new Error(errorMessage)
     }
 }
 
 LinkedList.prototype[Symbol.iterator] = function () {
-    let pointer = this.head
+    let pointer = this._head
     return {
         next() {
             if (!!pointer) {
                 const value = pointer.value
-                pointer = pointer?.next
+                pointer = pointer.next
                 return {
                     value: value,
                     done: false,
