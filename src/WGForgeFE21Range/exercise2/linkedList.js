@@ -31,50 +31,50 @@ class LinkedList {
     _tail = null;
     //добавил конструктор для возможности инициализации списка
     constructor(...data) {
-        if (data) {
+        if (data.length) {
             data.forEach(value => {
                 this.add(value)
             })
         }
     }
 
-    add(...date) {
-        if (date.length === 0) throw new Error("Нет значения для добавления")
+    add(...data) {
+        if (data.length === 0) throw new Error("Нет значения для добавления")
         // если нет позиции для вставки
-        if (date.length === 1) {
+        if (data.length === 1) {
             //если список не пустой
             if (this._tail) {
                 this._tail.next = {
-                    value: date[0],
+                    value: data[0],
                     next: null,
                 }
                 this._tail = this._tail.next
             } else {
                 // если список был пустой
                 this._tail = {
-                    value: date[0],
+                    value: data[0],
                     next: null,
                 }
                 this._head = this._tail
             }
             // если есть позиция для вставки
-        } else if (date.length === 2) {
-            let position = +date[1]
+        } else if (data.length === 2) {
+            let position = +data[1]
             // проверка на валидность значения позиции вставки
-            if (isPositionValid(date[1])) {
+            if (isPositionValid(data[1])) {
                 let pointer = this._head
                 if (position) {
                     // нахождение указателя на элемент перед позицией вставки
                     pointer = setPointer(position, pointer)
                     errorPointerOutsideList(pointer)
                     pointer.next = {
-                        value: date[0],
+                        value: data[0],
                         next: pointer.next,
                     }
                 } else {
                     //если позиция вставки 0 (head)
                     this._head = {
-                        value: date[0],
+                        value: data[0],
                         next: pointer,
                     }
                 }

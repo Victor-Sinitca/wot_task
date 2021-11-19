@@ -224,15 +224,50 @@ function moveProduct($product) {
 
 
     const $body = document.getElementById("bodyId")
+
+    //определяем список правил CSS документа
+    let styleSheet = document.styleSheets[0];
+    //создаем уникальное имя анимации
+    let animationName = `keyframe${Date.now()}`
+    //определяем параметры необходимой анимации
+    let keyframes =
+        `@-webkit-keyframes ${animationName} {
+                     100% {transform: translate3d(${left + width / 2 - widthProduct / 2 - leftProduct}px, ${top + height / 2 - heightProduct / 2 - topProduct}px, 0px) scale3d(0.1,0.1,0.1) rotate(360deg)}
+                 }`
+    //добавляем правило @-webkit-keyframes в список правил CSS документа
+    styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
+    //устанавливаем правила выполнения анимации для анимируемого объекта
+    $moveProduct.style.animation = `${animationName} 1.5s ease-in-out `
+    // подписываемся на окончание анимации
+    $moveProduct.addEventListener("animationend", () => {
+        // находим добавленный @-webkit-keyframes, сохраненный в document.styleSheets
+        let index = null
+        for (let i = 0; i < styleSheet.cssRules.length; i++) {
+            if (styleSheet.rules[i].name) {
+                if (styleSheet.rules[i].name === animationName) {
+                    //нахождение анимации по имени стиля  и опредление его индекса в таблице стилей
+                    index = i
+                }
+            }
+        }
+        if (index !== null) {
+            //если стиль найден  - удаляем его из таблице по индексу
+            styleSheet.deleteRule(index)
+        }
+        //удаляем  обьект созданный для анимации
+        $moveProduct.remove()
+    })
+
     //устанавливаем задержку для старта анимации !!без нее анимация отработает до рендера!!
-    setTimeout(() => {
+   /* setTimeout(() => {
         $moveProduct.style.transform = `translate3d(${left + width / 2 - widthProduct / 2 - leftProduct}px, ${top + height / 2 - heightProduct / 2 - topProduct}px, 0px)
          scale3d(0.1,0.1,0.1) rotate(360deg)`
         $moveProduct.style.opacity = 0.2
         $moveProduct.addEventListener("transitionend", () => {
             $moveProduct.remove()
         })
-    })
+    })*/
+
     //добавляем элемент для анимации
     $body.append($moveProduct)
 }
