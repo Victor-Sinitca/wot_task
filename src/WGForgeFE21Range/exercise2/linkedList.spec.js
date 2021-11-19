@@ -87,9 +87,7 @@ describe("func1", () => {
         list.add(1)
         list.add(2)
         list.add(3)
-        expect(() => {
-            list.add(4, 5)
-        }).toThrow(errorMessage)
+        expect(() => { list.add(4, 5)}).toThrow(errorMessage)
     })
     it('8', () => {
         const list = new LinkedList()

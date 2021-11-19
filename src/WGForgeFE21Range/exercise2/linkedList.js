@@ -15,9 +15,9 @@ function isPositionValid(position) {
 
 function setPointer(position, pointer) {
     while (position - 1) {
+        pointer = pointer?.next
         if (!pointer) throw new Error(errorMessage)
         position--
-        pointer = pointer?.next
     }
     return pointer
 }
@@ -63,15 +63,16 @@ class LinkedList {
                 if (position) {
                     // нахождение указателя на элемент перед позицией вставки
                     pointer = setPointer(position, pointer)
-                   /* while (position - 1) {
-                        if (!pointer) throw new Error(errorMessage)
-                        position--
-                        pointer = pointer.next
-                    }*/
+                    /* while (position - 1) {
+                         pointer = pointer.next
+                         position--
+                     }*/
+                    if (!pointer) throw new Error(errorMessage)
                     pointer.next = {
                         value: date[0],
                         next: pointer.next,
                     }
+
                 } else {
                     //если позиция вставки 0 (head)
                     this.head = {
@@ -89,7 +90,12 @@ class LinkedList {
             let pointer = this.head
             if (position) {
                 // нахождение указателя на элемент перед позицией возврата
-                pointer = setPointer(position, pointer)
+                /*pointer = setPointer(position, pointer)*/
+                while (position - 1) {
+                    pointer = pointer.next
+                    position--
+                }
+                if (!pointer) throw new Error(errorMessage)
                 errorPointerInEndList(pointer)
                 return {
                     value: pointer.next.value,
@@ -112,7 +118,12 @@ class LinkedList {
             let pointer = this.head
             if (position) {
                 // нахождение указателя на элемент перед позицией удаления
-                pointer = setPointer(position, pointer)
+                /* pointer = setPointer(position, pointer)*/
+                while (position - 1) {
+                    pointer = pointer.next
+                    position--
+                }
+                if (!pointer) throw new Error(errorMessage)
                 errorPointerInEndList(pointer)
                 if (pointer.next.next) {
                     //удаление среднего элемента
@@ -124,7 +135,7 @@ class LinkedList {
                 }
             } else {
                 //удаление первого элемента
-                this._head = this.head.next
+                this.head = this.head.next
                 if (this.head === null) this.tail = null
             }
         } else throw new Error(errorMessage)
@@ -137,7 +148,7 @@ LinkedList.prototype[Symbol.iterator] = function () {
         next() {
             if (!!pointer) {
                 const value = pointer.value
-                pointer = pointer.next
+                pointer = pointer?.next
                 return {
                     value: value,
                     done: false,
