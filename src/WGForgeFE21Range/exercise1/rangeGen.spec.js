@@ -217,6 +217,11 @@ describe("func3", ()=> {
         const exp=[]
         expect(forOfRange(range,range(1,3,1))).toEqual(exp)
     })
+/*    it('25', () => {
+        const exp=[]
+
+        expect(forOfRange(range,429496729)).toEqual(exp)
+    })*/
 })
 
 

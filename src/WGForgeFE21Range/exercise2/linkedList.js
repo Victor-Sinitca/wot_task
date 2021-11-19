@@ -1,11 +1,40 @@
 const errorMessage = "Incorrect position"
 const errorMessage1 = "The list is empty"
 
-class LinkedList {
-    constructor() {
-        this.head = null;
-        this.tail = null;
+function errorEmptyList(head) {
+    if (head === null) throw new Error(errorMessage1)
+}
+
+function errorPointerInEndList(pointer) {
+    if (pointer.next === null) throw new Error(errorMessage)
+}
+
+function isPositionValid(position) {
+    return (typeof +position === "number" && !isNaN(+position) && position != null && !Array.isArray(position) && +position >= 0)
+}
+
+function setPointer(position, pointer) {
+    while (position - 1) {
+        if (!pointer) throw new Error(errorMessage)
+        position--
+        pointer = pointer?.next
     }
+    return pointer
+}
+
+class LinkedList {
+    head = null;
+    tail = null;
+
+    //добавил конструктор для инициализации списка
+    /*constructor(...data) {
+        if (data) {
+            data.forEach(value => {
+                this.add(value)
+            })
+        }
+    }*/
+
     add(...date) {
         if (date.length === 0) throw new Error(errorMessage)
         // если нет позиции для вставки
@@ -16,7 +45,7 @@ class LinkedList {
                     value: date[0],
                     next: null,
                 }
-                this.tail = this.tail?.next
+                this.tail = this.tail.next
 
             } else {
                 // если список был пустой
@@ -29,119 +58,74 @@ class LinkedList {
         } else if (date.length === 2) {
             let position = +date[1]
             // проверка на валидность значения позиции вставки
-            if (typeof position === "number" && !isNaN(position) && date[1] != null && !Array.isArray(date[1])) {
-                if (position < 0) throw new Error(errorMessage)
+            if (isPositionValid(date[1])) {
                 let pointer = this.head
-                if (position === 0) {
-                    this.head = {
-                        value: date[0],
-                        next: pointer,
-                    }
-                } else {
-                    // нахождение указателя на элемент перед
-                    while (position - 1) {
-                        if (!pointer && position - 1 > 0) throw new Error(errorMessage)
+                if (position) {
+                    // нахождение указателя на элемент перед позицией вставки
+                    pointer = setPointer(position, pointer)
+                   /* while (position - 1) {
+                        if (!pointer) throw new Error(errorMessage)
                         position--
-                        pointer = pointer?.next
-                    }
-                    if (pointer === null) throw new Error(errorMessage)
+                        pointer = pointer.next
+                    }*/
                     pointer.next = {
                         value: date[0],
                         next: pointer.next,
                     }
+                } else {
+                    //если позиция вставки 0 (head)
+                    this.head = {
+                        value: date[0],
+                        next: pointer,
+                    }
                 }
             } else throw new Error(errorMessage)
         } else throw new Error(errorMessage)
-        /* if (!position && +position !== 0) {
-             if (this.tail) {
-                 this.tail.next = {
-                     value: item,
-                     next: null,
-                 }
-                 this.tail = this.tail?.next
-             } else {
-                 this.tail = {
-                     value: item,
-                     next: null,
-                 }
-                 this.head = this.tail
-             }
-         } else if (typeof +position === "number") {
-             position = +position
-             if (position < 0) throw errorMessage
-             let pointer = this.head
-             if (position === 0) {
-                 this.head = {
-                     value: item,
-                     next: pointer,
-                 }
-             } else {
-                 while (position - 1) {
-                     if (!pointer && position - 1 > 0) throw errorMessage
-                     position--
-                     pointer = pointer?.next
-                 }
-                 if (pointer === null) throw errorMessage
-                 pointer.next = {
-                     value: item,
-                     next: pointer.next,
-                 }
-             }
-         } else throw errorMessage*/
     }
 
-    get(pos) {
-        let position = +pos
-        if (typeof position === "number" && !isNaN(position) && pos != null && !Array.isArray(pos)) {
-            if (position < 0) throw new Error(errorMessage)
+    get(position) {
+        if (isPositionValid(position)) {
+            position = +position
             let pointer = this.head
-            if (position === 0) {
+            if (position) {
+                // нахождение указателя на элемент перед позицией возврата
+                pointer = setPointer(position, pointer)
+                errorPointerInEndList(pointer)
+                return {
+                    value: pointer.next.value,
+                    next: pointer.next.next
+                }
+            } else {
+                //вернуть первый элемент
                 return {
                     value: pointer.value,
                     next: pointer.next
                 }
-                /* return pointer*/
-            } else {
-                while (position - 1) {
-                    if (!pointer && position - 1 > 0) throw new Error(errorMessage)
-                    position--
-                    pointer = pointer?.next
-                }
-                if (pointer === null) throw new Error(errorMessage)
-                if (pointer?.next === null) throw new Error(errorMessage)
-                return {
-                    value: pointer?.next.value,
-                    next: pointer?.next.next
-                }
-                /*return pointer?.next*/
             }
         } else throw errorMessage
     }
 
-    remove(pos) {
-        if (this.head === null) throw new Error(errorMessage1)
-        let position = +pos
-        if (typeof position === "number" && !isNaN(position) && pos != null && !Array.isArray(pos)) {
-            if (position < 0) throw errorMessage
+    remove(position) {
+        errorEmptyList(this.head)
+        if (isPositionValid(position)) {
+            position = +position
             let pointer = this.head
-            if (position === 0) {
-                this.head = this.head?.next
-                if (this.head === null) this.tail = null
-            } else {
-                while (position - 1) {
-                    if (!pointer && position - 1 > 0) throw new Error(errorMessage)
-                    position--
-                    pointer = pointer?.next
-                }
-                if (pointer === null) throw new Error(errorMessage)
-                if (pointer?.next === null) throw new Error(errorMessage)
-
-                if (pointer?.next.next) {
+            if (position) {
+                // нахождение указателя на элемент перед позицией удаления
+                pointer = setPointer(position, pointer)
+                errorPointerInEndList(pointer)
+                if (pointer.next.next) {
+                    //удаление среднего элемента
                     pointer.next = pointer.next.next
                 } else {
+                    //удаление последнего элемента
                     pointer.next = null
                     this.tail = pointer
                 }
+            } else {
+                //удаление первого элемента
+                this._head = this.head.next
+                if (this.head === null) this.tail = null
             }
         } else throw new Error(errorMessage)
     }
@@ -151,8 +135,8 @@ LinkedList.prototype[Symbol.iterator] = function () {
     let pointer = this.head
     return {
         next() {
-            if (pointer) {
-                const value = pointer?.value
+            if (!!pointer) {
+                const value = pointer.value
                 pointer = pointer.next
                 return {
                     value: value,
@@ -160,12 +144,12 @@ LinkedList.prototype[Symbol.iterator] = function () {
                 };
             } else {
                 return {
+                    value: undefined,
                     done: true
                 };
             }
         }
     }
 }
-
 
 module.exports = LinkedList
