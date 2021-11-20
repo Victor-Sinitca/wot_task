@@ -1,3 +1,5 @@
+import {moveProduct} from "./moveProduct"
+
 const productData = [
     {
         productDescription: {
@@ -239,7 +241,7 @@ class Wishlist {
         })
     }
 }
-function moveProduct($product, targetID, parentID, style = null, additionalStyles = null) {
+/*function moveProduct($product, targetID, parentID, style = null, additionalStyles = null) {
     const $moveProduct = $product.cloneNode(true);
     //определение размеров и положения продукта для анимации
     let {left: leftProduct, top: topProduct, height: heightProduct, width: widthProduct} = $product.getBoundingClientRect()
@@ -306,16 +308,16 @@ function moveProduct($product, targetID, parentID, style = null, additionalStyle
 
 
     //коостыль добавления анимации на setTimeout
-    /* setTimeout(() => {
+    /!* setTimeout(() => {
          $moveProduct.style.transform = `translate3d(${left + width / 2 - widthProduct / 2 - leftProduct}px, ${top + height / 2 - heightProduct / 2 - topProduct}px, 0px)
           scale3d(0.1,0.1,0.1) rotate(360deg)`
          $moveProduct.style.opacity = 0.2
          $moveProduct.addEventListener("transitionend", () => {
              $moveProduct.remove()
          })
-     })*/
+     })*!/
     $parent.append($moveProduct)
-}
+}*/
 
 const mainWishlist = new Wishlist()
 mainWishlist.setData()

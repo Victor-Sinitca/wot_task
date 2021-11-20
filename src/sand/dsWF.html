@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            background: url(./image.jpg) no-repeat center ;
+            background-size: cover;
+            margin: 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgb(0, 0, 0);
+            height: 100%;
+            width: 100%;
+        }
+
+        .ghost {
+            transition: transform 0.25s ease, opacity 1.25s ease-in;
+        }
+
+        .cancel-btn {
+            border: none;
+            border-radius: 10px;
+            text-transform: uppercase;
+            color: white;
+            background: red;
+            padding: 1em;
+            cursor: pointer;
+            margin-bottom: 1.5em;
+            box-shadow: 4px 4px 8px 0px rgba(255, 0, 0, 0.4);
+        }
+    </style>
+
+</head>
+<body>
+<div id="container">
+    <h1>Thanks for your purchase of 15,000 GLD!</h1>
+    <h2 class="cancel-header">Below is your last chance to cancel.</h2>
+    <div class="ghost">
+        <button class="cancel-btn" type="button">Cancel</button>
+    </div>
+    <script type="text/javascript"  >
+        const randomValue = 20;
+        const maxAttempts = 10;
+        const words = [
+            "nice try",
+            "whew close!",
+            "missed me!",
+            "are you even trying?",
+            "too slow!",
+            "given up yet?",
+            "you'll never catch me!"
+        ];
+
+        const cancelButton = document.querySelector(".cancel-btn");
+        const cancelHeader = document.querySelector(".cancel-header");
+        const ghost = document.querySelector(".ghost");
+
+        let pityCount = 0;
+
+        function getRandomInt(min, max) {
+            return Math.round(min - 0.5 + Math.random() * (max - min + 1));
+        }
+
+        function runAway(e) {
+            console.log(1)
+            if (pityCount < maxAttempts) {
+                pityCount += 1;
+                cancelButton.innerText = words[getRandomInt(0, words.length - 1)];
+                ghost.style = `transform: translate(${getRandomInt(-randomValue, randomValue)}vw, ${getRandomInt(-randomValue, randomValue)}vh);`;
+                console.log(11)
+            } else {
+                cancelButton.innerText = "Ok, I'm tired and I'm leave";
+                cancelHeader.innerText = "Your purchase was successful.";
+                ghost.style = "opacity: 0; pointer-events: none;";
+                console.log(12)
+            }
+        }
+        cancelButton.addEventListener("mouseover", runAway, false);
+    </script>
+</div>
+</body>
+</html>
