@@ -153,41 +153,113 @@ const userDate = {
     shopping: [],
 }
 
-function wishlistInitial() {
-    const $wishlist = document.getElementById("wishlistId")
-    $wishlist.innerText = `(${userDate.wishlist.length})`
+
+class Wishlist {
+    #productData = []
+    #userDate = {
+        wishlist: [],
+        shopping: [],
+    }
+    setData() {
+        //добавить запрос на сервер дляполучения данных
+        this.#productData = productData
+        this.#userDate = userDate
+    }
+    wishlistInitial() {
+        const $wishlist = document.getElementById("wishlistId")
+        $wishlist.innerText = `(${this.#userDate.wishlist.length})`
+    }
+    shoppingInitial() {
+        const $shopping = document.getElementById("shoppingId")
+        $shopping.innerText = `(${this.#userDate.shopping.length})`
+    }
+    createProduct($parent, productData) {
+        const $product = document.createElement("div")
+        $product.classList.add('product')
+        $product.innerHTML = `
+                <a href="http://localhost:63342/wot_c/src/course/item.html">
+                    <img class="imgBG" src="assets/images/Layer40.svg" alt="Танк">
+                    <div class="description">
+                        <div class="description_Product">
+                            <span class="description_flag">${productData.productDescription.country}</span>
+                            <span class="description_typ">${productData.productDescription.type}</span>
+                            <h2>${productData.productDescription.name}</h2>
+                        </div>
+                        <span class="description_price">$ 58.99</span>
+                    </div>
+                </a>
+                <button id="wishButton" class="description_button">purchase</button>
+                <button class="like likeNotActive">Поставить лайк</button>
+    `
+        $product.style.gridColumn = `span ${productData.productDescription.span}`;
+        $product.style.paddingBottom = `${100 / productData.productDescription.span}%`;
+        const $button = $product.querySelectorAll("button")
+        const $likeButton = $button[1]
+        const $purchaseButton = $button[0]
+        userDate.wishlist.forEach(value => {
+            if (value.productID === productData.productID) {
+                $likeButton.classList.remove("likeNotActive")
+                $likeButton.classList.add('likeActive')
+            }
+        })
+
+        $purchaseButton.addEventListener("click", (event) => {
+            moveProduct($product, "shoppingId", "bodyId", "productMoveStyle",
+                [{name: "paddingBottom", property: "0px"}])
+            userDate.shopping.push(productData)
+            this.shoppingInitial()
+        }, false)
+
+        $likeButton.addEventListener("click", (event) => {
+            const filterWishlist = userDate.wishlist.filter(value => value.productID !== productData.productID)
+            if (filterWishlist.length === userDate.wishlist.length) {
+                userDate.wishlist.push(productData)
+                $likeButton.classList.remove("likeNotActive")
+                $likeButton.classList.add('likeActive')
+            } else {
+                userDate.wishlist = filterWishlist
+                $likeButton.classList.remove("likeActive")
+                $likeButton.classList.add('likeNotActive')
+            }
+            this.wishlistInitial()
+        }, false)
+
+        /*const $link = $product.querySelectorAll("a")
+        $link.addEventListener("click", (event) => {
+            createItem($parent,productData)
+        }, false)*/
+        $parent.append($product)
+    }
+    addProducts() {
+        this.wishlistInitial()
+        this.shoppingInitial()
+        const $container = document.getElementById('main')
+        this.#productData.forEach(value => {
+            this.createProduct($container, value)
+        })
+    }
 }
-
-wishlistInitial()
-
-function shoppingInitial() {
-    const $shopping = document.getElementById("shoppingId")
-    $shopping.innerText = `(${userDate.shopping.length})`
-}
-
-shoppingInitial()
-
-
-function moveProduct($product, targetID, parentID, style=null , additionalStyles=null) {
+function moveProduct($product, targetID, parentID, style = null, additionalStyles = null) {
     const $moveProduct = $product.cloneNode(true);
     //определение размеров и положения продукта для анимации
-    let {left:leftProduct,top:topProduct, height:heightProduct, width:widthProduct} = $product.getBoundingClientRect()
+    let {left: leftProduct, top: topProduct, height: heightProduct, width: widthProduct} = $product.getBoundingClientRect()
     //определение размеров и положения цели для анимации
 
     // объект по targetID расположен в заголовке с position: fixed в верхней части экрана
     const {left, top, height, width} = document.getElementById(targetID).getBoundingClientRect()
 
     //добавление стиля для объекта анимации
-    if(style) $moveProduct.classList.add(style)
+    if (style) $moveProduct.classList.add(style)
     // смещение положения старта анимации в случае если прототип анимации сместился за видимую часть экрана
-    if((topProduct+heightProduct*0.75) < top){
-        topProduct = 175
-        leftProduct = 15
+    if ((topProduct + heightProduct * 0.75) < top) {
+        const {clientWidth, clientHeight} = document.documentElement
+        topProduct = (clientHeight - heightProduct)/2
+        leftProduct =(clientWidth - widthProduct)/2
     }
     //добавлене дополнительных переданных стилей по типу [{name:название, property:значение}] значения - строки
-    if(additionalStyles){
+    if (additionalStyles) {
         additionalStyles.forEach(value => {
-            $moveProduct.style[value.name]=value.property
+            $moveProduct.style[value.name] = value.property
         })
     }
     //установка layout для анимации
@@ -233,84 +305,18 @@ function moveProduct($product, targetID, parentID, style=null , additionalStyles
     })
 
 
-
-
     //коостыль добавления анимации на setTimeout
-   /* setTimeout(() => {
-        $moveProduct.style.transform = `translate3d(${left + width / 2 - widthProduct / 2 - leftProduct}px, ${top + height / 2 - heightProduct / 2 - topProduct}px, 0px)
-         scale3d(0.1,0.1,0.1) rotate(360deg)`
-        $moveProduct.style.opacity = 0.2
-        $moveProduct.addEventListener("transitionend", () => {
-            $moveProduct.remove()
-        })
-    })*/
+    /* setTimeout(() => {
+         $moveProduct.style.transform = `translate3d(${left + width / 2 - widthProduct / 2 - leftProduct}px, ${top + height / 2 - heightProduct / 2 - topProduct}px, 0px)
+          scale3d(0.1,0.1,0.1) rotate(360deg)`
+         $moveProduct.style.opacity = 0.2
+         $moveProduct.addEventListener("transitionend", () => {
+             $moveProduct.remove()
+         })
+     })*/
     $parent.append($moveProduct)
 }
 
-function createProduct($parent, productData) {
-    const $product = document.createElement("div")
-    $product.classList.add('product')
-    $product.innerHTML = `               
-                <a href="http://localhost:63342/wot_c/src/course/item.html">
-                    <img class="imgBG" src="assets/images/Layer40.svg" alt="Танк">
-                    <div class="description">
-                        <div class="description_Product">
-                            <span class="description_flag">${productData.productDescription.country}</span>
-                            <span class="description_typ">${productData.productDescription.type}</span>
-                            <h2>${productData.productDescription.name}</h2>
-                        </div>
-                        <span class="description_price">$ 58.99</span>                        
-                    </div> 
-                </a>                             
-                <button id="wishButton" class="description_button">purchase</button>     
-                <button class="like likeNotActive">Поставить лайк</button>                
-    `
-    $product.style.gridColumn = `span ${productData.productDescription.span}`;
-    $product.style.paddingBottom = `${100 / productData.productDescription.span}%`;
-    const $button = $product.querySelectorAll("button")
-    const $likeButton = $button[1]
-    const $purchaseButton = $button[0]
-    userDate.wishlist.forEach(value => {
-        if (value.productID === productData.productID) {
-            $likeButton.classList.remove("likeNotActive")
-            $likeButton.classList.add('likeActive')
-        }
-    })
-
-    $purchaseButton.addEventListener("click", (event) => {
-        moveProduct($product, "shoppingId", "bodyId","productMoveStyle",
-            [{name:"paddingBottom", property:"0px" }])
-        userDate.shopping.push(productData)
-        shoppingInitial()
-    }, false)
-
-    $likeButton.addEventListener("click", (event) => {
-        const filterWishlist = userDate.wishlist.filter(value => value.productID !== productData.productID)
-        if (filterWishlist.length === userDate.wishlist.length) {
-            userDate.wishlist.push(productData)
-            $likeButton.classList.remove("likeNotActive")
-            $likeButton.classList.add('likeActive')
-        } else {
-            userDate.wishlist = filterWishlist
-            $likeButton.classList.remove("likeActive")
-            $likeButton.classList.add('likeNotActive')
-        }
-        wishlistInitial()
-    }, false)
-
-    /*const $link = $product.querySelectorAll("a")
-    $link.addEventListener("click", (event) => {
-        createItem($parent,productData)
-    }, false)*/
-    $parent.append($product)
-}
-
-function addProducts() {
-    const $container = document.getElementById('main')
-    productData.forEach(value => {
-        createProduct($container, value)
-    })
-}
-addProducts()
-
-
+const mainWishlist = new Wishlist()
+mainWishlist.setData()
+mainWishlist.addProducts()

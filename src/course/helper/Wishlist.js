@@ -1,14 +1,10 @@
-
-
-
 const productData = [
     {
         productDescription: {
             span: "1",
             name: "ИС-64",
-            type: "",
-            country: "",
-            description: "Premium Account allows to research desirable vehicles quicker and to save time on its purchase. It gives more Credits and Experience per battle.  It is a great deal as the profit after paying for repairs and ammo increases two- or threefold, depending on your performance in battle (amount of damage, destroyed enemies, base captured/defended, enemies detected, etc).",
+            type: "танк",
+            country: "СССР",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -20,7 +16,6 @@ const productData = [
             name: "ИС-6",
             type: "",
             country: "",
-            description: "Premium Account allows to research desirable vehicles quicker and to save time on its purchase. It gives more Credits and Experience per battle.  It is a great deal as the profit after paying for repairs and ammo increases two- or threefold, depending on your performance in battle (amount of damage, destroyed enemies, base captured/defended, enemies detected, etc).",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -32,8 +27,6 @@ const productData = [
             name: "ИС-6",
             type: "",
             country: "",
-            description: "Premium Account allows to research desirable vehicles quicker and to save time on its purchase. It gives more Credits and Experience per battle.  It is a great deal as the profit after paying for repairs and ammo increases two- or threefold, depending on your performance in battle (amount of damage, destroyed enemies, base captured/defended, " +
-                "enemies detected, etc).",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -45,8 +38,6 @@ const productData = [
             name: "ИС-6",
             type: "",
             country: "",
-            description: "Premium Account allows to research desirable vehicles quicker and to save time on its purchase. It gives more Credits and Experience per battle.  It is a great deal as the profit after paying for repairs and ammo increases two- or threefold, depending on your performance in battle (amount of damage, destroyed enemies, base captured/defended, " +
-                "enemies detected, etc).",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -58,8 +49,6 @@ const productData = [
             name: "ИС-6",
             type: "",
             country: "",
-            description: "Premium Account allows to research desirable vehicles quicker and to save time on its purchase. It gives more Credits and Experience per battle.  It is a great deal as the profit after paying for repairs and ammo increases two- or threefold, depending on your performance in battle (amount of damage, destroyed enemies, base captured/defended, " +
-                "enemies detected, etc).",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -71,8 +60,6 @@ const productData = [
             name: "ИС-6",
             type: "",
             country: "",
-            description: "Premium Account allows to research desirable vehicles quicker and to save time on its purchase. It gives more Credits and Experience per battle.  It is a great deal as the profit after paying for repairs and ammo increases two- or threefold, depending on your performance in battle (amount of damage, destroyed enemies, base captured/defended, " +
-                "enemies detected, etc).",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -84,8 +71,6 @@ const productData = [
             name: "ИС-6",
             type: "",
             country: "",
-            description: "Premium Account allows to research desirable vehicles quicker and to save time on its purchase. It gives more Credits and Experience per battle.  It is a great deal as the profit after paying for repairs and ammo increases two- or threefold, depending on your performance in battle (amount of damage, destroyed enemies, base captured/defended, " +
-                "enemies detected, etc).",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -97,8 +82,6 @@ const productData = [
             name: "ИС-6",
             type: "",
             country: "",
-            description: "Premium Account allows to research desirable vehicles quicker and to save time on its purchase. It gives more Credits and Experience per battle.  It is a great deal as the profit after paying for repairs and ammo increases two- or threefold, depending on your performance in battle (amount of damage, destroyed enemies, base captured/defended, " +
-                "enemies detected, etc).",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -111,8 +94,6 @@ const productData = [
             name: "ИС-6",
             type: "",
             country: "",
-            description: "Premium Account allows to research desirable vehicles quicker and to save time on its purchase. It gives more Credits and Experience per battle.  It is a great deal as the profit after paying for repairs and ammo increases two- or threefold, depending on your performance in battle (amount of damage, destroyed enemies, base captured/defended, " +
-                "enemies detected, etc).",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -125,8 +106,6 @@ const productData = [
             name: "ИС-6",
             type: "",
             country: "",
-            description: "Premium Account allows to research desirable vehicles quicker and to save time on its purchase. It gives more Credits and Experience per battle.  It is a great deal as the profit after paying for repairs and ammo increases two- or threefold, depending on your performance in battle (amount of damage, destroyed enemies, base captured/defended, " +
-                "enemies detected, etc).",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -139,8 +118,6 @@ const productData = [
             name: "ИС-6",
             type: "",
             country: "",
-            description: "Premium Account allows to research desirable vehicles quicker and to save time on its purchase. It gives more Credits and Experience per battle.  It is a great deal as the profit after paying for repairs and ammo increases two- or threefold, depending on your performance in battle (amount of damage, destroyed enemies, base captured/defended, " +
-                "enemies detected, etc).",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -153,8 +130,6 @@ const productData = [
             name: "ИС-6",
             type: "",
             country: "",
-            description: "Premium Account allows to research desirable vehicles quicker and to save time on its purchase. It gives more Credits and Experience per battle.  It is a great deal as the profit after paying for repairs and ammo increases two- or threefold, depending on your performance in battle (amount of damage, destroyed enemies, base captured/defended, " +
-                "enemies detected, etc).",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -167,8 +142,6 @@ const productData = [
             name: "ИС-6",
             type: "",
             country: "",
-            description: "Premium Account allows to research desirable vehicles quicker and to save time on its purchase. It gives more Credits and Experience per battle.  It is a great deal as the profit after paying for repairs and ammo increases two- or threefold, depending on your performance in battle (amount of damage, destroyed enemies, base captured/defended, " +
-                "enemies detected, etc).",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -179,14 +152,8 @@ const userDate = {
     wishlist: [],
     shopping: [],
 }
-const errorMessage = "передан недействительный идентификатор продукта"
-function createError(massage, data) {
-    return {
-        massage,
-        data
-    }
-}
-class Item {
+
+export class Wishlist {
     #productData = []
     #userDate = {
         wishlist: [],
@@ -205,45 +172,71 @@ class Item {
         const $shopping = document.getElementById("shoppingId")
         $shopping.innerText = `(${this.#userDate.shopping.length})`
     }
-    createItem(itemId) {
-        const $container = document.getElementsByClassName(`mainContainer`)
-        let itemData = this.#productData.filter((product) => product.productID === itemId)
-        const $item = document.createElement('main');
-        $item.classList.add('mainItemContent')
-        if (!itemData.length) {
-            $item.innerHTML = `<p style="min-height: 100vh">Продукт не найден</p>`
-            $container[0].append($item)
-            throw createError(errorMessage,itemId)
-        }
-        itemData = itemData[0]
-        $item.innerHTML = `
-            <h2>${itemData.productDescription.name}</h2>
-            <img src=${itemData.productImage} alt="${itemData.productDescription.name}"/>
-            <div class="purchaseContainer">
-                <span class="priceItem">${itemData.productCost}</span>
-                <button class="purchaseButton">purchase</button>
-            </div>
-            <p class="itemDescription">${itemData.productDescription.description}</p>`
+    createProduct($parent, productData) {
+        const $product = document.createElement("div")
+        $product.classList.add('product')
+        $product.innerHTML = `               
+                <a href="http://localhost:63342/wot_c/src/course/item.html">
+                    <img class="imgBG" src="assets/images/Layer40.svg" alt="Танк">
+                    <div class="description">
+                        <div class="description_Product">
+                            <span class="description_flag">${productData.productDescription.country}</span>
+                            <span class="description_typ">${productData.productDescription.type}</span>
+                            <h2>${productData.productDescription.name}</h2>
+                        </div>
+                        <span class="description_price">$ 58.99</span>                        
+                    </div> 
+                </a>                             
+                <button id="wishButton" class="description_button">purchase</button>     
+                <button class="like likeNotActive">Поставить лайк</button>                
+    `
+        $product.style.gridColumn = `span ${productData.productDescription.span}`;
+        $product.style.paddingBottom = `${100 / productData.productDescription.span}%`;
+        const $button = $product.querySelectorAll("button")
+        const $likeButton = $button[1]
+        const $purchaseButton = $button[0]
+        userDate.wishlist.forEach(value => {
+            if (value.productID === productData.productID) {
+                $likeButton.classList.remove("likeNotActive")
+                $likeButton.classList.add('likeActive')
+            }
+        })
 
-        const $button = $item.querySelector("button")
-        const $img = $item.querySelector("img")
-        $button.addEventListener("click", (event) => {
-            moveProduct($img,"shoppingId","bodyId","moveProductItem")
-            userDate.shopping.push(itemData)
+        $purchaseButton.addEventListener("click", (event) => {
+            moveProduct($product, "shoppingId", "bodyId", "productMoveStyle",
+                [{name: "paddingBottom", property: "0px"}])
+            userDate.shopping.push(productData)
             this.shoppingInitial()
         }, false)
 
+        $likeButton.addEventListener("click", (event) => {
+            const filterWishlist = userDate.wishlist.filter(value => value.productID !== productData.productID)
+            if (filterWishlist.length === userDate.wishlist.length) {
+                userDate.wishlist.push(productData)
+                $likeButton.classList.remove("likeNotActive")
+                $likeButton.classList.add('likeActive')
+            } else {
+                userDate.wishlist = filterWishlist
+                $likeButton.classList.remove("likeActive")
+                $likeButton.classList.add('likeNotActive')
+            }
+            this.wishlistInitial()
+        }, false)
 
-        $container[0].append($item)
-
-        /*while ($container.firstChild) {
-            $parent.removeChild($parent.firstChild);
-        }
-        $parent.append($item)
-        */
-
+        /*const $link = $product.querySelectorAll("a")
+        $link.addEventListener("click", (event) => {
+            createItem($parent,productData)
+        }, false)*/
+        $parent.append($product)
     }
-
+    addProducts() {
+        this.wishlistInitial()
+        this.shoppingInitial()
+        const $container = document.getElementById('main')
+        this.#productData.forEach(value => {
+            this.createProduct($container, value)
+        })
+    }
 }
 function moveProduct($product, targetID, parentID, style = null, additionalStyles = null) {
     const $moveProduct = $product.cloneNode(true);
@@ -258,9 +251,8 @@ function moveProduct($product, targetID, parentID, style = null, additionalStyle
     if (style) $moveProduct.classList.add(style)
     // смещение положения старта анимации в случае если прототип анимации сместился за видимую часть экрана
     if ((topProduct + heightProduct * 0.75) < top) {
-        const {clientWidth, clientHeight} = document.documentElement
-        topProduct = (clientHeight - heightProduct)/2
-        leftProduct =(clientWidth - widthProduct)/2
+        topProduct = 175
+        leftProduct = 15
     }
     //добавлене дополнительных переданных стилей по типу [{name:название, property:значение}] значения - строки
     if (additionalStyles) {
@@ -323,6 +315,4 @@ function moveProduct($product, targetID, parentID, style = null, additionalStyle
     $parent.append($moveProduct)
 }
 
-const item= new Item()
-item.setData()
-item.createItem(2)
+module.exports = Wishlist
