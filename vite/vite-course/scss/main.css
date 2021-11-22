@@ -438,13 +438,17 @@
 }
 .productMoveStyle {
   position: fixed;
-  padding-bottom: 0px;
   opacity: 1;
   transition: transform 1.5s, opacity 3s;
-  z-index: 2;
+  /* &:hover .imgBG {
+     opacity: 1;
+   }*/
 }
-.productMoveStyle:hover .imgBG {
-  opacity: 1;
+.productMoveStyle.disabled {
+  pointer-events: none;
+}
+.productMoveStyle.a.disabled {
+  pointer-events: none;
 }
 
 body {

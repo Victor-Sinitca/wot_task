@@ -207,7 +207,9 @@ class Wishlist {
 
         $purchaseButton.addEventListener("click", (event) => {
             moveProduct($product, "shoppingId", "bodyId", "productMoveStyle",
-                [{name: "paddingBottom", property: "0px"}])
+                [
+                    {name: "paddingBottom", property: "0px"}
+                    ])
             userDate.shopping.push(productData)
             this.shoppingInitial()
         }, false)

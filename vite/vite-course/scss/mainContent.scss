@@ -191,16 +191,21 @@
 }
 
 
+//стиль устанавливается для анимации покупки продукта в addWishlist.js
 .productMoveStyle {
   position: fixed;
-  padding-bottom: 0px;
-  opacity: 1;
+  opacity:1;
   transition: transform 1.5s, opacity 3s;
-  z-index: 2;
 
-  &:hover .imgBG {
-    opacity: 1;
+  &.disabled {
+    pointer-events: none;
   }
+  &.a.disabled {
+    pointer-events: none;
+  }
+ /* &:hover .imgBG {
+    opacity: 1;
+  }*/
 }
 
 
