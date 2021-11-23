@@ -32,11 +32,11 @@ export const moveProduct =($product, targetID, parentID, style = null, additiona
     const $parent = document.getElementById(parentID)
 
     //определяем список правил CSS документа
-    let styleSheet = document.styleSheets[0];
+    const styleSheet = document.styleSheets[0];
     //создаем уникальное имя анимации
-    let animationName = `keyframe${Date.now()}`
+    const animationName = `keyframe${Date.now()}`
     //определяем параметры необходимой анимации
-    let keyframes =
+    const keyframes =
         `@-webkit-keyframes ${animationName} {
                      100% {transform: translate3d(${left + width / 2 - widthProduct / 2 - leftProduct}px, ${top + height / 2 - heightProduct / 2 - topProduct}px, 0px) scale3d(0.1,0.1,0.1) rotate(360deg)}
                  }`

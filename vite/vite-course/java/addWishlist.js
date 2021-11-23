@@ -162,19 +162,71 @@ class Wishlist {
         wishlist: [],
         shopping: [],
     }
+
     setData() {
         //добавить запрос на сервер дляполучения данных
         this.#productData = productData
-        this.#userDate = userDate
     }
-    wishlistInitial() {
+
+    wishlistChange(wishlistData = null) {
         const $wishlist = document.getElementById("wishlistId")
+        //инициализация списка любимых товаров
+        if (!wishlistData) {
+            // GET запрос на сервер
+            // this.#userDate.wishlist = response.data
+
+            //заглушка логики сервера
+            this.#userDate.wishlist = userDate.wishlist
+
+            $wishlist.innerText = `(${this.#userDate.wishlist.length})`
+            return
+        }
+
+        // PUT запрос на сервер {wishlist:wishlistData}
+        // this.#userDate.wishlist.=response.data
+
+        //заглушка логики сервера
+        const filterWishlist = this.#userDate.wishlist.filter(value => value.productID !== wishlistData.productID)
+        if (filterWishlist.length === this.#userDate.wishlist.length) {
+            this.#userDate.wishlist.push(wishlistData)
+        } else {
+            this.#userDate.wishlist = filterWishlist
+        }
+
         $wishlist.innerText = `(${this.#userDate.wishlist.length})`
     }
-    shoppingInitial() {
+
+    shoppingChange(shoppingData = null, deleteValue = false) {
         const $shopping = document.getElementById("shoppingId")
+        if (!shoppingData) {
+            // GET запрос на сервер
+            // this.#userDate.wishlist = response.data (userDate.shopping)
+            //заглушка
+            this.#userDate.shopping = userDate.shopping
+            $shopping.innerText = `(${this.#userDate.shopping.length})`
+            return
+        }
+        if (deleteValue) {
+            // DELETE запрос на сервер {deleteShopping:newValue}
+            // this.#userDate.shopping = response.data
+
+            //заглушка
+            this.#userDate.shopping = this.#userDate.shopping.filter(value =>
+                value.productID !== productData.productID)
+
+            $shopping.innerText = `(${this.#userDate.shopping.length})`
+            return
+        }
+
+        // POST запрос на сервер {newWishlist:newValue}
+        // this.#userDate.shopping = response.data
+
+        //заглушка
+        this.#userDate.shopping.push(shoppingData)
+
         $shopping.innerText = `(${this.#userDate.shopping.length})`
     }
+
     createProduct($parent, productData) {
         const $product = document.createElement("div")
         $product.classList.add('product')
@@ -198,51 +250,54 @@ class Wishlist {
         const $button = $product.querySelectorAll("button")
         const $likeButton = $button[1]
         const $purchaseButton = $button[0]
-        userDate.wishlist.forEach(value => {
+
+        //добавление товара в карзину
+        $purchaseButton.addEventListener("click", (event) => {
+            //выполнене анимации добавления товара
+            moveProduct($product, "shoppingId", "bodyId", "productMoveStyle",
+                [
+                    {name: "paddingBottom", property: "0px"}
+                ])
+            //добавление товара в карзину и изменение счетчика добавленных товаров
+            this.shoppingChange(productData)
+        }, false)
+
+        //поиск любимого товара в списке  и установка состояния лайк/нелайк
+        this.#userDate.wishlist.forEach(value => {
             if (value.productID === productData.productID) {
                 $likeButton.classList.remove("likeNotActive")
                 $likeButton.classList.add('likeActive')
             }
         })
 
-        $purchaseButton.addEventListener("click", (event) => {
-            moveProduct($product, "shoppingId", "bodyId", "productMoveStyle",
-                [
-                    {name: "paddingBottom", property: "0px"}
-                    ])
-            userDate.shopping.push(productData)
-            this.shoppingInitial()
-        }, false)
-
+        // изменение состояния лайк/нелайк
         $likeButton.addEventListener("click", (event) => {
-            const filterWishlist = userDate.wishlist.filter(value => value.productID !== productData.productID)
-            if (filterWishlist.length === userDate.wishlist.length) {
-                userDate.wishlist.push(productData)
+            // изменение списка любимых товаров
+            this.wishlistChange(productData)
+            // изменение стилей лайк/нелайк
+            const isAddInWishlist = this.#userDate.wishlist.filter(value => value.productID === productData.productID)
+            if (isAddInWishlist.length) {
                 $likeButton.classList.remove("likeNotActive")
                 $likeButton.classList.add('likeActive')
             } else {
-                userDate.wishlist = filterWishlist
                 $likeButton.classList.remove("likeActive")
                 $likeButton.classList.add('likeNotActive')
             }
-            this.wishlistInitial()
         }, false)
-
-        /*const $link = $product.querySelectorAll("a")
-        $link.addEventListener("click", (event) => {
-            createItem($parent,productData)
-        }, false)*/
         $parent.append($product)
     }
+
     addProducts() {
-        this.wishlistInitial()
-        this.shoppingInitial()
+        this.setData()
+        this.wishlistChange()
+        this.shoppingChange()
         const $container = document.getElementById('main')
         this.#productData.forEach(value => {
             this.createProduct($container, value)
         })
     }
 }
+
 /*function moveProduct($product, targetID, parentID, style = null, additionalStyles = null) {
     const $moveProduct = $product.cloneNode(true);
     //определение размеров и положения продукта для анимации
@@ -322,5 +377,4 @@ class Wishlist {
 }*/
 
 const mainWishlist = new Wishlist()
-mainWishlist.setData()
 mainWishlist.addProducts()
