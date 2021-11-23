@@ -13,7 +13,7 @@
         }
 
         body {
-            background: url(./image.jpg) no-repeat center ;
+            background: url(./image.jpg) no-repeat center center ;
             background-size: cover;
             margin: 0;
         }
@@ -74,7 +74,6 @@
         const cancelButton = document.querySelector(".cancel-btn");
         const cancelHeader = document.querySelector(".cancel-header");
         const ghost = document.querySelector(".ghost");
-
         let pityCount = 0;
 
         function getRandomInt(min, max) {
@@ -82,20 +81,19 @@
         }
 
         function runAway(e) {
-            console.log(1)
             if (pityCount < maxAttempts) {
                 pityCount += 1;
-                cancelButton.innerText = words[getRandomInt(0, words.length - 1)];
-                ghost.style = `transform: translate(${getRandomInt(-randomValue, randomValue)}vw, ${getRandomInt(-randomValue, randomValue)}vh);`;
-                console.log(11)
+                cancelButton.innerHTML = words[getRandomInt(0, words.length - 1)];
+                ghost.style.transform = `translate(${getRandomInt(-randomValue, randomValue)}vw, ${getRandomInt(-randomValue, randomValue)}vh)`;
+
             } else {
-                cancelButton.innerText = "Ok, I'm tired and I'm leave";
-                cancelHeader.innerText = "Your purchase was successful.";
-                ghost.style = "opacity: 0; pointer-events: none;";
-                console.log(12)
+                cancelButton.innerHTML = "Ok, I'm tired and I'm leave";
+                cancelHeader.innerHTML = "Your purchase was successful.";
+                ghost.style.opacity = "0";
+                ghost.style.pointerEvents = "none";
             }
         }
-        cancelButton.addEventListener("mouseover", runAway, false);
+        cancelButton.addEventListener("mouseover", runAway);
     </script>
 </div>
 </body>
